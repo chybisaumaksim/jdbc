@@ -1,75 +1,46 @@
 package mySql;
 
 import daoFactory.DaoFactory;
+import daoFactory.PersistException;
 
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.sql.*;
-import java.util.Properties;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class MySqlDaoFactory implements DaoFactory {
 
-    static Connection connection = null;
-    static FileInputStream fileInputStream= null;
-    static Properties prop = new Properties();
+    private static String USER = "root";
+    private static String PASSWORD = "root";
+    private static String URL = "jdbc:mysql://localhost:3306/students";
+    private static String DRIVER = "com.mysql.jdbc.Driver";
 
+    public static Connection getConnection() throws PersistException {
+        Connection connection=null;
+        try {
+            connection = DriverManager.getConnection(URL, USER, PASSWORD);
+        } catch (SQLException e) {
+            throw new PersistException(e);
+        }
+        return  connection;
+    }
     public MySqlDaoFactory() {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            System.out.println("Driver loaded successful");
-        } catch (Exception e) {
+            Class.forName(DRIVER);
+            System.out.println("Драйвер подключен");
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
-    public static Connection getConnection() {
-        final String PATH_TO_PROPERTIES = "src/main/config.properties";
-        try {
-
-            fileInputStream = new FileInputStream(PATH_TO_PROPERTIES);
-            prop.load(fileInputStream);
-            connection = DriverManager.getConnection(prop.getProperty("url"),
-                    prop.getProperty("login"), prop.getProperty("password"));
-            System.out.println("Connection successful");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (fileInputStream != null) {
-                try {
-                    fileInputStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            return connection;
-        }
+    @Override
+    public MySqlMarkDao getMySqlMarkDao() throws PersistException {
+        return new MySqlMarkDao();
     }
-
-
-
-
-//    @Override
-//    public MySqlMarkDao getMySqlMarkDao() throws PersistException {
-//        return new MySqlMarkDao();
-//    }
-//    @Override
-//    public MySqlStudentDao getMySqlStudentDao() throws PersistException {
-//        return new MySqlStudentDao();
-//    }
-//    @Override
-//    public MySqlLessonDao getMySqlLessonDao() throws PersistException, SQLException {
-//        return new MySqlLessonDao();
-//    }
+    @Override
+    public MySqlStudentDao getMySqlStudentDao() throws PersistException {
+        return new MySqlStudentDao();
+    }
+    @Override
+    public MySqlLessonDao getMySqlLessonDao() throws PersistException {
+        return new MySqlLessonDao();
+    }
 }

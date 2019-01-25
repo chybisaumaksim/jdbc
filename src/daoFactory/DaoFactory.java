@@ -6,10 +6,11 @@ import mySql.MySqlStudentDao;
 import java.sql.SQLException;
 
 public interface DaoFactory {
+    MySqlMarkDao getMySqlMarkDao() throws PersistException;
 
-//    MySqlMarkDao getMySqlMarkDao() throws PersistException;
-//    MySqlStudentDao getMySqlStudentDao() throws PersistException, SQLException;
-//    MySqlLessonDao getMySqlLessonDao() throws PersistException, SQLException;
+    MySqlStudentDao getMySqlStudentDao() throws PersistException;
+
+    MySqlLessonDao getMySqlLessonDao() throws PersistException, SQLException;
 }
 
 

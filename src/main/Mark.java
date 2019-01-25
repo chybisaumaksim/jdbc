@@ -1,7 +1,6 @@
 package main;
 
 public class Mark {
-
     private int id;
     private int studentId;
     private int lessonId;

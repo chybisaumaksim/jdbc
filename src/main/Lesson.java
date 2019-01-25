@@ -1,7 +1,6 @@
 package main;
 
 public class Lesson {
-
     private int id;
     private String lesson;
 
