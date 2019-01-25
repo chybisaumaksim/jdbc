@@ -1,4 +1,4 @@
-package main;
+package domain;
 import daoFactory.DaoFactory;
 import daoFactory.PersistException;
 import mySql.MySqlDaoFactory;
@@ -36,7 +36,8 @@ public class Main {
         studentDao.update(st4);
 //обновляем предмет
         Lesson ls2 = new Lesson();
-           ls2.setLesson("Chemistry");
+        ls2.setId(2);
+        ls2.setLesson("Chemistry");
         lessonDao.update(ls2);
 //обновляем оценку
         Mark mr2 = new Mark();
@@ -62,7 +63,7 @@ public class Main {
         markDao.create(mr1);
 //удаляем студента
         Student st5=new Student();
-        st5.setId(6);
+        st5.setId(13);
         studentDao.delete(st5);
 //удаляем оценку
         Mark mr3=new Mark();
@@ -70,7 +71,7 @@ public class Main {
         markDao.delete(mr3);
 //удаляем предмет
         Lesson ls3=new Lesson();
-        ls3.setId(96);
+        ls3.setId(7);
         lessonDao.delete(ls3);
     }
 }

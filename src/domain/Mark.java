@@ -1,4 +1,4 @@
-package main;
+package domain;
 
 public class Mark {
     private int id;

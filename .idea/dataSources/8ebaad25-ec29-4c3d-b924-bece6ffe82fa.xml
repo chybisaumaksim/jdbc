@@ -818,9 +818,9 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="206" parent="7" name="lessons"/>
-    <table id="207" parent="7" name="marks"/>
-    <table id="208" parent="7" name="students"/>
+    <table id="206" parent="7" name="lesson"/>
+    <table id="207" parent="7" name="mark"/>
+    <table id="208" parent="7" name="student"/>
     <column id="209" parent="206" name="ID">
       <Position>1</Position>
       <DataType>int(10)|0s</DataType>
@@ -873,16 +873,16 @@
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="219" parent="207" name="marks_ibfk_1">
+    <foreign-key id="219" parent="207" name="mark_ibfk_1">
       <ColNames>Student_ID</ColNames>
       <RefSchemaName>students_db</RefSchemaName>
-      <RefTableName>students</RefTableName>
+      <RefTableName>student</RefTableName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
-    <foreign-key id="220" parent="207" name="marks_ibfk_2">
+    <foreign-key id="220" parent="207" name="mark_ibfk_2">
       <ColNames>Lesson_ID</ColNames>
       <RefSchemaName>students_db</RefSchemaName>
-      <RefTableName>lessons</RefTableName>
+      <RefTableName>lesson</RefTableName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
     <column id="221" parent="208" name="ID">

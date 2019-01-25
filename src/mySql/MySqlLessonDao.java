@@ -1,7 +1,7 @@
 package mySql;
 
 import daoFactory.PersistException;
-import main.Lesson;
+import domain.Lesson;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -61,7 +61,7 @@ public class MySqlLessonDao  {
         try (PreparedStatement stm = connection.prepareStatement(getAllQuery())) {
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
-                System.out.println(rs.getInt(1)+" "+rs.getInt(2)+" "+rs.getString(3));
+                System.out.println(rs.getInt(1)+" "+rs.getString(2));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -99,13 +99,13 @@ public class MySqlLessonDao  {
         System.out.println("Lesson deleted успешно");
     }
     public String getSelectQuery() {
-        return "SELECT id, lesson_Id, lesson FROM Lesson ";
+        return "SELECT id, lesson FROM Lesson ";
     }
     public String getUpdateQuery() {
-        return "UPDATE lesson \n SET Lesson  = ? \n  WHERE lesson_ID = ?";
+        return "UPDATE lesson \n SET Lesson  = ? \n  WHERE ID = ?";
     }
     public String getCreateQuery() {
-        return "INSERT INTO Lesson (lesson_Id, lesson) \n VALUES (?, ?) ;";
+        return "INSERT INTO Lesson (id, lesson) \n VALUES (?, ?) ;";
     }
     public String getDeleteQuery() {
         return "DELETE FROM lesson WHERE id = ? ;";
@@ -129,15 +129,16 @@ public class MySqlLessonDao  {
     }
     protected void prepareStatementForInsert(PreparedStatement statement, Lesson object) throws PersistException {
         try {
-//            statement.setInt(1, object.getId());
-            statement.setString(1, object.getLesson());
+            statement.setInt(1, object.getId());
+            statement.setString(2, object.getLesson());
         } catch (Exception e) {
             throw new PersistException(e);
         }
     }
     protected void prepareStatementForUpdate(PreparedStatement statement, Lesson object) throws PersistException {
         try {
-            statement.setString(1, object.getLesson());
+            statement.setInt(1, object.getId());
+            statement.setString(2, object.getLesson());
         } catch (Exception e) {
             throw new PersistException(e);
         }

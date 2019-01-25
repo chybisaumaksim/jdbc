@@ -11,7 +11,7 @@ public class MySqlDaoFactory implements DaoFactory {
 
     private static String USER = "root";
     private static String PASSWORD = "root";
-    private static String URL = "jdbc:mysql://localhost:3306/students";
+    private static String URL = "jdbc:mysql://localhost:3306/students_db";
     private static String DRIVER = "com.mysql.jdbc.Driver";
 
     public static Connection getConnection() throws PersistException {

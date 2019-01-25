@@ -1,9 +1,6 @@
 package mySql;
-
-
 import daoFactory.PersistException;
-import main.Mark;
-
+import domain.Mark;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
