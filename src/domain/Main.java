@@ -31,8 +31,8 @@ public class Main {
         st4.setId(3);
         st4.setName("Virtor");
         st4.setSurname("Pipkin");
-        st4.setBirthDate("19990101");
-        st4.setEnterYear(2005);
+        st4.setBirthDate("19890101");
+        st4.setEnterYear(2006);
         studentDao.update(st4);
 //обновляем предмет
         Lesson ls2 = new Lesson();
@@ -49,7 +49,7 @@ public class Main {
         st1.setName("Dmitrii");
         st1.setSurname("Novoselov");
         st1.setBirthDate("19861009");
-        st1.setEnterYear(2006);
+        st1.setEnterYear(2008);
         studentDao.create(st1);
 //добавляем предмет
         Lesson ls1 = new Lesson();

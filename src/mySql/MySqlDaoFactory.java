@@ -1,36 +1,40 @@
 package mySql;
-
 import daoFactory.DaoFactory;
 import daoFactory.PersistException;
-
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 
 public class MySqlDaoFactory implements DaoFactory {
+    static final String PATH_TO_PROPERTIES = "src/domain/config.properties";
 
-    private static String USER = "root";
-    private static String PASSWORD = "root";
-    private static String URL = "jdbc:mysql://localhost:3306/students_db";
-    private static String DRIVER = "com.mysql.jdbc.Driver";
 
-    public static Connection getConnection() throws PersistException {
-        Connection connection=null;
+
+    public static Connection getConnection() {
+            Connection connection=null;
         try {
-            connection = DriverManager.getConnection(URL, USER, PASSWORD);
+
+            connection = DriverManager.getConnection("Url");
         } catch (SQLException e) {
-            throw new PersistException(e);
+            e.printStackTrace();
         }
         return  connection;
     }
-    public MySqlDaoFactory() {
+        public MySqlDaoFactory() {
         try {
-            Class.forName(DRIVER);
+            Properties prop = new Properties();
+            new FileInputStream(PATH_TO_PROPERTIES);
+            Class.forName(prop.getProperty("driver"));
             System.out.println("Драйвер подключен");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
-    }
+        }
     @Override
     public MySqlMarkDao getMySqlMarkDao() throws PersistException {
         return new MySqlMarkDao();
