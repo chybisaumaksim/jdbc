@@ -2,7 +2,6 @@ package mySql;
 import daoFactory.DaoFactory;
 import daoFactory.PersistException;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -10,31 +9,45 @@ import java.util.Properties;
 
 public class MySqlDaoFactory implements DaoFactory {
     static final String PATH_TO_PROPERTIES = "src/domain/config.properties";
+    Properties prop = new Properties();
+    FileInputStream fileInputStream = null;
 
-
+    public MySqlDaoFactory() {
+        try {
+            fileInputStream = new FileInputStream(PATH_TO_PROPERTIES);
+            prop.load(fileInputStream);
+            Class.forName(prop.getProperty("driver"));
+            System.out.println("Driver loaded successful");
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (fileInputStream != null) {
+                    fileInputStream.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     public static Connection getConnection() {
-            Connection connection=null;
+        Connection connection=null;
+        Properties prop = new Properties();
+        FileInputStream fileInputStream = null;
         try {
-
-            connection = DriverManager.getConnection("Url");
+            fileInputStream = new FileInputStream(PATH_TO_PROPERTIES);
+            prop.load(fileInputStream);
+            connection = DriverManager.getConnection(prop.getProperty("url"),
+                    prop.getProperty("login"), prop.getProperty("password"));
         } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return  connection;
     }
-        public MySqlDaoFactory() {
-        try {
-            Properties prop = new Properties();
-            new FileInputStream(PATH_TO_PROPERTIES);
-            Class.forName(prop.getProperty("driver"));
-            System.out.println("Драйвер подключен");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        }
+
     @Override
     public MySqlMarkDao getMySqlMarkDao() throws PersistException {
         return new MySqlMarkDao();

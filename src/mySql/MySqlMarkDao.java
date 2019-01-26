@@ -15,8 +15,7 @@ import java.util.List;
     private PreparedStatement statementSelectID;
     private PreparedStatement statementDelete;
 
-    protected MySqlMarkDao() throws PersistException {
-
+    protected MySqlMarkDao(){
         try {
             connection=MySqlDaoFactory.getConnection();
             statementCreate = connection.prepareStatement(getCreateQuery(), PreparedStatement.RETURN_GENERATED_KEYS);
@@ -24,7 +23,7 @@ import java.util.List;
             statementSelectID = connection.prepareStatement(getSelectQuery() + "WHERE ID = ?;");
             statementDelete = connection.prepareStatement(getDeleteQuery());
         } catch (Exception e) {
-            throw new PersistException(e);
+            e.printStackTrace();
         }
     }
     private class PersistMark extends Mark {
@@ -34,8 +33,8 @@ import java.util.List;
     }
     public Mark create(Mark mark) throws PersistException {
         Mark persistInstance;
-        ResultSet generatedId=null;
-        ResultSet selectedById=null;
+        ResultSet generatedId;
+        ResultSet selectedById;
         try {
             prepareStatementForInsert(statementCreate, mark);
             statementCreate.executeUpdate();
@@ -84,16 +83,16 @@ import java.util.List;
         System.out.println("Оценка deleted успешно");
     }
     public String getSelectAll() {
-        return "SELECT * FROM mark ";
+        return "SELECT id, student_Id, lesson_Id, mark FROM mark ";
     }
     public String getSelectQuery() {
         return "SELECT id, student_Id, lesson_Id, mark FROM Mark ";
     }
     public String getCreateQuery() {
-        return "INSERT INTO Mark (student_Id, lesson_Id, mark) \n VALUES (?, ?, ?);";
+        return "INSERT INTO Mark (student_Id, lesson_Id, mark) VALUES (?, ?, ?);";
     }
-    public String getUpdateQuery() throws PersistException {
-        return "UPDATE STUDENTS.mark \n SET MARK = ? WHERE id = ?;";
+    public String getUpdateQuery(){
+        return "UPDATE STUDENTS.mark  SET MARK = ? WHERE id = ?;";
     }
     public String getDeleteQuery() {return "DELETE FROM Mark WHERE id= ?;";
     }

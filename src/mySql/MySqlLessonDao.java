@@ -6,24 +6,19 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class MySqlLessonDao  {
 
-    private class PersistLesson extends Lesson {
-        public void setId(int id) {
-            super.setId(id);
-        }
-    }
     private Connection connection;
     private PreparedStatement statementCreate;
     private PreparedStatement statementUpdate;
     private PreparedStatement statementSelectAll;
     private PreparedStatement statementSelectID;
     private PreparedStatement statementDelete;
-    protected MySqlLessonDao() throws PersistException {
-
+    protected MySqlLessonDao() {
         try {
             connection=MySqlDaoFactory.getConnection();
             statementCreate = connection.prepareStatement(getCreateQuery(), PreparedStatement.RETURN_GENERATED_KEYS);
@@ -32,13 +27,13 @@ public class MySqlLessonDao  {
             statementSelectID = connection.prepareStatement(getSelectQuery() + "WHERE ID = ?;");
             statementDelete = connection.prepareStatement(getDeleteQuery());
         } catch (Exception e) {
-            throw new PersistException(e);
+            e.printStackTrace();
         }
     }
     public Lesson create(Lesson lesson) throws PersistException {
         Lesson persistInstance;
-        ResultSet generatedId=null;
-        ResultSet selectedById=null;
+        ResultSet generatedId;
+        ResultSet selectedById;
         try {
             prepareStatementForInsert(statementCreate, lesson);
             statementCreate.executeUpdate();
@@ -60,26 +55,18 @@ public class MySqlLessonDao  {
         System.out.println("Все предметы");
         try (PreparedStatement stm = connection.prepareStatement(getAllQuery())) {
             ResultSet rs = stm.executeQuery();
+            List<Lesson> list = new ArrayList<>();
+            Lesson l = new Lesson();
             while (rs.next()) {
+                l.setId(rs.getInt(1));
+                l.setLesson(rs.getString(2));
+                list.add(l);
                 System.out.println(rs.getInt(1)+" "+rs.getString(2));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-    //        System.out.println("Все предметы");
-//        String sql = "SELECT * FROM lesson;";
-//        List<Lesson> list = new ArrayList<Lesson>();
-//        try (PreparedStatement stm = connection.prepareStatement(sql)) {
-//            ResultSet rs = stm.executeQuery();
-//            Lesson l = new Lesson();
-//            while (rs.next()) {
-//                l.setId(rs.getInt(1));
-//                l.setLessonId(rs.getInt(2));
-//                l.setLesson(rs.getString(3));
-//                list.add(l);
-//                System.out.println(rs.getInt(1)+" "+rs.getInt(2)+" "+rs.getString(3));
-//            }
     public void update (Lesson lesson) throws PersistException {
         try {
             prepareStatementForUpdate(statementUpdate, lesson);
@@ -99,16 +86,16 @@ public class MySqlLessonDao  {
         System.out.println("Lesson deleted успешно");
     }
     public String getSelectQuery() {
-        return "SELECT id, lesson FROM Lesson ";
+        return "SELECT ID, Lesson FROM Lesson ";
     }
     public String getUpdateQuery() {
-        return "UPDATE lesson \n SET Lesson  = ? \n  WHERE ID = ?";
+        return "UPDATE Lesson \n SET Lesson  = ? \n  WHERE ID = ?";
     }
     public String getCreateQuery() {
-        return "INSERT INTO Lesson (id, lesson) \n VALUES (?, ?) ;";
+        return "INSERT INTO Lesson (ID, Lesson) \n VALUES (?, ?) ;";
     }
     public String getDeleteQuery() {
-        return "DELETE FROM lesson WHERE id = ? ;";
+        return "DELETE FROM Lesson WHERE id = ? ;";
     }
     public String getAllQuery() {
         return "SELECT * FROM lesson ; ";
@@ -117,7 +104,7 @@ public class MySqlLessonDao  {
         LinkedList<Lesson> result = new LinkedList<Lesson>();
         try {
             while (rs.next()) {
-                PersistLesson lesson = new PersistLesson();
+                Lesson lesson = new Lesson();
                 lesson.setId(rs.getInt(1));
                 lesson.setLesson(rs.getString(2));
                 result.add(lesson);

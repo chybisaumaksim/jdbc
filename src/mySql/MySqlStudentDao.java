@@ -1,6 +1,7 @@
 package mySql;
 
 import daoFactory.PersistException;
+import domain.Lesson;
 import domain.Student;
 
 import java.sql.Connection;
@@ -29,7 +30,7 @@ public class MySqlStudentDao{
             statementSelectID = connection.prepareStatement(getSelectQuery()+ "WHERE ID = ?;");
             statementDelete = connection.prepareStatement(getDeleteQuery());
         } catch (Exception e) {
-            throw new PersistException(e);
+            e.printStackTrace();
         }
     }
     public void update (Student student) throws PersistException {
@@ -48,8 +49,8 @@ public class MySqlStudentDao{
     }
     public Student create(Student student) throws PersistException {
         Student persistInstance;
-        ResultSet generatedId = null;
-        ResultSet selectedById = null;
+        ResultSet generatedId;
+        ResultSet selectedById;
         try {
             prepareStatementForInsert(statementCreate, student);
             statementCreate.executeUpdate();
@@ -78,17 +79,24 @@ public class MySqlStudentDao{
     }
     public String getSelectQuery() {
         ArrayList<Student> st=new ArrayList<>();
-//        PreparedStatement ps=parseResultSet()
         return "SELECT ID, First_Name, Second_Name, Birth_Date, Enter_Year FROM student ";
     }
     public  void getAll () {
         System.out.println("Все студенты");
         try (PreparedStatement stm = connection.prepareStatement(getSelectAll())) {
             ResultSet rs = stm.executeQuery();
+            List<Student> list = new ArrayList<>();
+            Student st = new Student();
             while (rs.next()) {
+                st.setId(rs.getInt(1));
+                st.setName(rs.getString(2));
+                st.setSurname(rs.getString(3));
+                st.setBirthDate(rs.getString(4));
+                st.setEnterYear(rs.getInt(5));
+                list.add(st);
                 System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3)+" "+rs.getString(4)+" "+rs.getInt(5));
             }
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
