@@ -67,7 +67,6 @@ import java.util.List;
         try {
             prepareStatementForUpdate(statementUpdate, mark);
             statementUpdate.executeUpdate();
-
         } catch (Exception e) {
             throw new PersistException(e);
         }

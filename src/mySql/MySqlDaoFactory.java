@@ -49,7 +49,7 @@ public class MySqlDaoFactory implements DaoFactory {
     }
 
     @Override
-    public MySqlMarkDao getMySqlMarkDao() throws PersistException {
+    public MySqlMarkDao getMySqlMarkDao(){
         return new MySqlMarkDao();
     }
     @Override
@@ -57,7 +57,7 @@ public class MySqlDaoFactory implements DaoFactory {
         return new MySqlStudentDao();
     }
     @Override
-    public MySqlLessonDao getMySqlLessonDao() throws PersistException {
+    public MySqlLessonDao getMySqlLessonDao(){
         return new MySqlLessonDao();
     }
 }
