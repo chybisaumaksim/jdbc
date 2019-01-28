@@ -7,7 +7,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 
@@ -39,11 +38,6 @@ public class MySqlStudentDao{
             throw new PersistException(e);
         }
         System.out.println("Таблица Student updated успешно");
-    }
-    private class PersistStudent extends Student {
-        public void setId(int id) {
-            super.setId(id);
-        }
     }
     public int create(Student student) throws PersistException {
         int persistInstance;
@@ -99,23 +93,6 @@ public class MySqlStudentDao{
     }
     public String getDeleteQuery() {
         return "DELETE FROM student WHERE id= ?;";
-    }
-    protected List<Student> parseResultSet(ResultSet rs) throws PersistException {
-        LinkedList<Student> result = new LinkedList<Student>();
-        try {
-            while (rs.next()) {
-                PersistStudent student = new PersistStudent();
-                student.setId(rs.getInt(1));
-                student.setName(rs.getString(2));
-                student.setSurname(rs.getString(3));
-                student.setBirthDate(rs.getString(4));
-                student.setEnterYear(rs.getInt(5));
-                result.add(student);
-            }
-        } catch (Exception e) {
-            throw new PersistException(e);
-        }
-        return result;
     }
     protected void prepareStatementForUpdate(PreparedStatement statement, Student object) throws PersistException {
         try {

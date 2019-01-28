@@ -130,7 +130,7 @@ public class MySqlLessonDao  {
         return "SELECT ID, Lesson FROM Lesson; ";
     }
     protected List<Lesson> parseResultSet(ResultSet rs) throws PersistException {
-        LinkedList<Lesson> result = new LinkedList<>();
+        LinkedList<Lesson> result = new LinkedList<Lesson>();
         try {
             while (rs.next()) {
                 Lesson lesson = new Lesson();
