@@ -13,11 +13,11 @@ import java.util.List;
 public class MySqlLessonDao  {
 
     private Connection connection;
-    private PreparedStatement statementCreate;
-    private PreparedStatement statementUpdate;
-    private PreparedStatement statementSelectAll;
-    private PreparedStatement statementSelectID;
-    private PreparedStatement statementDelete;
+        private PreparedStatement statementCreate=null;
+        private PreparedStatement statementUpdate=null;
+        private PreparedStatement statementSelectAll=null;
+        private PreparedStatement statementSelectID=null;
+        private PreparedStatement statementDelete=null;
     protected MySqlLessonDao() {
         try {
             connection=MySqlDaoFactory.getConnection();
@@ -29,22 +29,51 @@ public class MySqlLessonDao  {
         } catch (Exception e) {
             e.printStackTrace();
         }
+//        finally {w
+//            try {
+//                if (statementDelete != null) {
+//                    statementDelete.close();
+//                }
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//            try {
+//                if (statementSelectID != null) {
+//                    statementSelectID.close();
+//                }
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }
+//            try {
+//                if (statementSelectAll!= null) {
+//                    statementSelectAll.close();
+//                }
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//            try {
+//                if (statementUpdate!= null) {
+//                    statementUpdate.close();
+//                }
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//            try {
+//                if (statementCreate!= null) {
+//                    statementCreate.close();
+//                }
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }
     }
-    public Lesson create(Lesson lesson) throws PersistException {
-        Lesson persistInstance;
-        ResultSet generatedId;
-        ResultSet selectedById;
+
+    public int create(Lesson lesson) throws PersistException {
+        int persistInstance;
         try {
             prepareStatementForInsert(statementCreate, lesson);
-            statementCreate.executeUpdate();
-            generatedId = statementCreate.getGeneratedKeys();
-            if (generatedId.next()) {
-                int id = generatedId.getInt(1);
-                statementSelectID.setInt(1, id);
-            }
-            selectedById = statementSelectID.executeQuery();
-            List<Lesson> list = parseResultSet(selectedById);
-            persistInstance = list.iterator().next();
+            persistInstance =statementCreate.executeUpdate();
         } catch (Exception e) {
             throw new PersistException(e);
         }
@@ -89,19 +118,19 @@ public class MySqlLessonDao  {
         return "SELECT ID, Lesson FROM Lesson ";
     }
     public String getUpdateQuery() {
-        return "UPDATE Lesson \n SET Lesson  = ? \n  WHERE ID = ?";
+        return "UPDATE Lesson SET Lesson  = ?  WHERE ID = ?";
     }
     public String getCreateQuery() {
-        return "INSERT INTO Lesson (ID, Lesson) \n VALUES (?, ?) ;";
+        return "INSERT INTO Lesson (ID, Lesson) VALUES (?, ?) ;";
     }
     public String getDeleteQuery() {
-        return "DELETE FROM Lesson WHERE id = ? ;";
+        return "DELETE FROM Lesson WHERE id = ?; ";
     }
     public String getAllQuery() {
-        return "SELECT * FROM lesson ; ";
+        return "SELECT ID, Lesson FROM Lesson; ";
     }
     protected List<Lesson> parseResultSet(ResultSet rs) throws PersistException {
-        LinkedList<Lesson> result = new LinkedList<Lesson>();
+        LinkedList<Lesson> result = new LinkedList<>();
         try {
             while (rs.next()) {
                 Lesson lesson = new Lesson();

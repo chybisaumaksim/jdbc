@@ -31,21 +31,11 @@ import java.util.List;
             super.setId(id);
         }
     }
-    public Mark create(Mark mark) throws PersistException {
-        Mark persistInstance;
-        ResultSet generatedId;
-        ResultSet selectedById;
+    public int create(Mark mark) throws PersistException {
+        int persistInstance;
         try {
             prepareStatementForInsert(statementCreate, mark);
-            statementCreate.executeUpdate();
-            generatedId = statementCreate.getGeneratedKeys();
-            if (generatedId.next()) {
-                int id = generatedId.getInt(1);
-                statementSelectID.setInt(1, id);
-            }
-            selectedById = statementSelectID.executeQuery();
-            List<Mark> list = parseResultSet(selectedById);
-            persistInstance = list.iterator().next();
+            persistInstance =statementCreate.executeUpdate();
         } catch (Exception e) {
             throw new PersistException(e);
         }
@@ -88,7 +78,7 @@ import java.util.List;
         return "SELECT id, student_Id, lesson_Id, mark FROM Mark ";
     }
     public String getCreateQuery() {
-        return "INSERT INTO Mark (student_Id, lesson_Id, mark) VALUES (?, ?, ?);";
+        return "INSERT INTO Mark student_Id, lesson_Id, mark VALUES (?, ?, ?);";
     }
     public String getUpdateQuery(){
         return "UPDATE STUDENTS.mark  SET MARK = ? WHERE id = ?;";

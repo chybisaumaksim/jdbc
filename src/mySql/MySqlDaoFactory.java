@@ -4,7 +4,6 @@ import daoFactory.PersistException;
 import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.Properties;
 
 public class MySqlDaoFactory implements DaoFactory {
@@ -40,10 +39,16 @@ public class MySqlDaoFactory implements DaoFactory {
             prop.load(fileInputStream);
             connection = DriverManager.getConnection(prop.getProperty("url"),
                     prop.getProperty("login"), prop.getProperty("password"));
-        } catch (SQLException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if (fileInputStream != null) {
+                    fileInputStream.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         return  connection;
     }

@@ -1,13 +1,11 @@
 package mySql;
 
 import daoFactory.PersistException;
-import domain.Lesson;
 import domain.Student;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -21,7 +19,7 @@ public class MySqlStudentDao{
     private PreparedStatement statementSelectID;
     private PreparedStatement statementDelete;
 
-    protected MySqlStudentDao() throws PersistException {
+    protected MySqlStudentDao()  {
         try {
             connection=MySqlDaoFactory.getConnection();
             statementCreate = connection.prepareStatement(getCreateQuery());
@@ -47,21 +45,11 @@ public class MySqlStudentDao{
             super.setId(id);
         }
     }
-    public Student create(Student student) throws PersistException {
-        Student persistInstance;
-        ResultSet generatedId;
-        ResultSet selectedById;
+    public int create(Student student) throws PersistException {
+        int persistInstance;
         try {
             prepareStatementForInsert(statementCreate, student);
-            statementCreate.executeUpdate();
-            generatedId = statementCreate.getGeneratedKeys();
-            if (generatedId.next()) {
-                int id = generatedId.getInt(1);
-                statementSelectID.setInt(1, id);
-            }
-            selectedById = statementSelectID.executeQuery();
-            List<Student> list = parseResultSet(selectedById);
-            persistInstance = list.iterator().next();
+            persistInstance =statementCreate.executeUpdate();
         } catch (Exception e) {
             throw new PersistException(e);
         }
@@ -104,10 +92,10 @@ public class MySqlStudentDao{
         return "INSERT INTO student (First_Name, Second_Name, Birth_Date, Enter_Year) \n  VALUES (?, ?, ?, ?);";
     }
     public String getSelectAll() {
-        return "SELECT * FROM STUDENT ";
+        return "SELECT ID, First_Name, Second_Name, Birth_Date, Enter_Year FROM STUDENT ";
     }
     public String getUpdateQuery() {
-        return "UPDATE Student \n SET First_Name = ?, Second_Name  = ?, Birth_Date = ?, Enter_Year = ? \n WHERE id = ?;";
+        return "UPDATE Student SET First_Name = ?, Second_Name  = ?, Birth_Date = ?, Enter_Year = ? WHERE id = ?;";
     }
     public String getDeleteQuery() {
         return "DELETE FROM student WHERE id= ?;";
