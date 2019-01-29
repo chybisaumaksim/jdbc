@@ -6,6 +6,7 @@ import domain.Student;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class MySqlStudentDao{
     private PreparedStatement statementSelectID;
     private PreparedStatement statementDelete;
 
-    protected MySqlStudentDao()  {
+    protected MySqlStudentDao() throws PersistException {
         try {
             connection=MySqlDaoFactory.getConnection();
             statementCreate = connection.prepareStatement(getCreateQuery());
@@ -26,8 +27,8 @@ public class MySqlStudentDao{
             statementSelectAll = connection.prepareStatement(getSelectQuery());
             statementSelectID = connection.prepareStatement(getSelectQuery()+ "WHERE ID = ?;");
             statementDelete = connection.prepareStatement(getDeleteQuery());
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new PersistException("Ошибка при создании prepareStatement в классе "+getClass(), e);
         }
     }
     public void update (Student student) throws PersistException {

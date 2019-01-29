@@ -1,9 +1,13 @@
 package mySql;
 import daoFactory.DaoFactory;
 import daoFactory.PersistException;
+
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Properties;
 
 public class MySqlDaoFactory implements DaoFactory {
@@ -11,27 +15,25 @@ public class MySqlDaoFactory implements DaoFactory {
     Properties prop = new Properties();
     FileInputStream fileInputStream = null;
 
-    public MySqlDaoFactory() {
+        public MySqlDaoFactory() throws PersistException, ClassNotFoundException, IOException {
         try {
             fileInputStream = new FileInputStream(PATH_TO_PROPERTIES);
             prop.load(fileInputStream);
             Class.forName(prop.getProperty("driver"));
             System.out.println("Driver loaded successful");
-        } catch (Exception e) {
-            e.printStackTrace();
         } finally {
             try {
                 if (fileInputStream != null) {
                     fileInputStream.close();
                 }
-            } catch (Exception e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
 
-    public static Connection getConnection() {
-        Connection connection=null;
+    public static Connection getConnection() throws PersistException {
+        Connection connection;
         Properties prop = new Properties();
         FileInputStream fileInputStream = null;
         try {
@@ -39,14 +41,19 @@ public class MySqlDaoFactory implements DaoFactory {
             prop.load(fileInputStream);
             connection = DriverManager.getConnection(prop.getProperty("url"),
                     prop.getProperty("login"), prop.getProperty("password"));
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new PersistException(e);
+        } catch (FileNotFoundException e) {
+            throw new PersistException("Файл " + PATH_TO_PROPERTIES
+                    + " не найден.");
+        } catch (IOException e) {
+            throw new PersistException("Ошибка при работе с потоком fileInputStream", e);
         } finally {
             try {
                 if (fileInputStream != null) {
                     fileInputStream.close();
                 }
-            } catch (Exception e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -54,7 +61,7 @@ public class MySqlDaoFactory implements DaoFactory {
     }
 
     @Override
-    public MySqlMarkDao getMySqlMarkDao(){
+    public MySqlMarkDao getMySqlMarkDao() throws PersistException {
         return new MySqlMarkDao();
     }
     @Override
@@ -62,7 +69,7 @@ public class MySqlDaoFactory implements DaoFactory {
         return new MySqlStudentDao();
     }
     @Override
-    public MySqlLessonDao getMySqlLessonDao(){
+    public MySqlLessonDao getMySqlLessonDao()throws PersistException {
         return new MySqlLessonDao();
     }
 }
