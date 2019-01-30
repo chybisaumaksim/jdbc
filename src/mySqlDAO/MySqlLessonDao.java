@@ -7,36 +7,44 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
-public class MySqlLessonDao  {
+public class MySqlLessonDao {
 
     private Connection connection;
-        private PreparedStatement statementCreate;
-        private PreparedStatement statementUpdate;
-        private PreparedStatement statementDelete;
+    private PreparedStatement statementCreate;
+    private PreparedStatement statementUpdate;
+    private PreparedStatement statementDelete;
+    private PreparedStatement statementSelectID;
 
-    protected MySqlLessonDao() throws PersistException {
+    protected MySqlLessonDao(Connection connection) throws PersistException {
         try {
-            connection = MySqlDaoFactory.getConnection();
-            statementCreate = connection.prepareStatement(getCreateQuery(), PreparedStatement.RETURN_GENERATED_KEYS);
+            this.connection = connection;
+            statementCreate = connection.prepareStatement(getCreateQuery());
             statementUpdate = connection.prepareStatement(getUpdateQuery());
             statementDelete = connection.prepareStatement(getDeleteQuery());
+            statementSelectID = connection.prepareStatement(SelectIdQuery());
         } catch (SQLException e) {
             throw new PersistException("Ошибка при создании prepareStatement в классе "+getClass(), e);
         }
     }
 
     public void create(Lesson lesson) throws PersistException {
+        ResultSet generatedId;
         try {
             prepareStatementForInsert(statementCreate, lesson);
             statementCreate.executeUpdate();
+            generatedId = statementCreate.getGeneratedKeys();
+            if (generatedId.next()) {
+                int id = generatedId.getInt(1);
+                statementSelectID.setInt(1, id);
+            }
         } catch (Exception e) {
-            throw new PersistException(e);
+            throw new PersistException("Невозможно записать данные в БД", e);
         }
         System.out.println("Таблица Lesson обновлена успешно");
     }
-
     public void getAll () {
         System.out.println("Все предметы");
         try (PreparedStatement stm = connection.prepareStatement(getAllQuery())) {
@@ -75,13 +83,16 @@ public class MySqlLessonDao  {
         return "UPDATE Lesson SET Lesson  = ?  WHERE ID = ?";
     }
     public String getCreateQuery() {
-        return "INSERT INTO Lesson (ID, Lesson) VALUES (?, ?) ;";
+        return "INSERT INTO Lesson (ID, Lesson) VALUES (?, ?) ; ";
     }
     public String getDeleteQuery() {
         return "DELETE FROM Lesson WHERE id = ?; ";
     }
     public String getAllQuery() {
-        return "SELECT ID, Lesson FROM Lesson; ";
+        return "SELECT ID, Lesson FROM Lesson ; ";
+    }
+    public String SelectIdQuery() {
+        return "SELECT ID, Lesson FROM Lesson WHERE ID = ? ; ";
     }
     protected void prepareStatementForInsert(PreparedStatement statement, Lesson object) throws PersistException {
         try {
@@ -105,6 +116,20 @@ public class MySqlLessonDao  {
         } catch (Exception e) {
             throw new PersistException(e);
         }
+    }
+    protected List<Lesson> parseResultSet(ResultSet rs) throws PersistException {
+        LinkedList<Lesson> result = new LinkedList<>();
+        try {
+            while (rs.next()) {
+                Lesson lesson = new Lesson();
+                lesson.setId(rs.getInt(1));
+                lesson.setLesson(rs.getString(2));
+                result.add(lesson);
+            }
+        } catch (Exception e) {
+            throw new PersistException(e);
+        }
+        return result;
     }
 
 }

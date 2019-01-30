@@ -12,12 +12,12 @@ import java.sql.SQLException;
     private PreparedStatement statementUpdate;
     private PreparedStatement statementDelete;
 
-    protected MySqlMarkDao() throws PersistException {
+    protected MySqlMarkDao(Connection connection) throws PersistException {
         try {
-            connection= MySqlDaoFactory.getConnection();
-            statementCreate = connection.prepareStatement(getCreateQuery(), PreparedStatement.RETURN_GENERATED_KEYS);
-            statementUpdate = connection.prepareStatement(getUpdateQuery());
-            statementDelete = connection.prepareStatement(getDeleteQuery());
+            this.connection = connection;
+            statementCreate = this.connection.prepareStatement(getCreateQuery());
+            statementUpdate = this.connection.prepareStatement(getUpdateQuery());
+            statementDelete = this.connection.prepareStatement(getDeleteQuery());
         } catch (SQLException e) {
             throw new PersistException("Ошибка при создании prepareStatement в классе "+getClass(), e);
         }

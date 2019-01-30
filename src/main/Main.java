@@ -9,12 +9,15 @@ import mySqlDAO.MySqlLessonDao;
 import mySqlDAO.MySqlMarkDao;
 import mySqlDAO.MySqlStudentDao;
 
+import java.sql.SQLException;
+
 public class Main {
-    public static void main(String[] args) throws PersistException {
+    public static void main(String[] args) throws PersistException, SQLException {
 
         MySqlMarkDao markDao = null;
         MySqlLessonDao lessonDao = null;
         MySqlStudentDao studentDao = null;
+
         try {
             DaoFactory factory = new MySqlDaoFactory();
             studentDao = factory.getMySqlStudentDao();

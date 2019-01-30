@@ -19,14 +19,14 @@ public class MySqlStudentDao{
     private PreparedStatement statementSelectID;
     private PreparedStatement statementDelete;
 
-    protected MySqlStudentDao() throws PersistException {
+    protected MySqlStudentDao(Connection connection) throws PersistException {
         try {
-            connection=MySqlDaoFactory.getConnection();
-            statementCreate = connection.prepareStatement(getCreateQuery());
-            statementUpdate = connection.prepareStatement(getUpdateQuery());
-            statementSelectAll = connection.prepareStatement(getSelectQuery());
-            statementSelectID = connection.prepareStatement(getSelectQuery()+ "WHERE ID = ?;");
-            statementDelete = connection.prepareStatement(getDeleteQuery());
+            this.connection =connection;
+            statementCreate = this.connection.prepareStatement(getCreateQuery());
+            statementUpdate = this.connection.prepareStatement(getUpdateQuery());
+            statementSelectAll = this.connection.prepareStatement(getSelectQuery());
+            statementSelectID = this.connection.prepareStatement(getSelectQuery()+ "WHERE ID = ?;");
+            statementDelete = this.connection.prepareStatement(getDeleteQuery());
         } catch (SQLException e) {
             throw new PersistException("Ошибка при создании prepareStatement в классе "+getClass(), e);
         }
