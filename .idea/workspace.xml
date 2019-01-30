@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56f62b53-582c-48dc-acd2-5944935eae8c" name="Default Changelist" comment="">
+    <list default="true" id="56f62b53-582c-48dc-acd2-5944935eae8c" name="Default Changelist" comment="7 commit.&#10;30/01/19&#10;11.22&#10;New names of Classes, new directories.&#10;Create void,">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/trening/daoFactory/DaoFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/trening/daoFactory/DaoFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/trening/daoFactory/PersistException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/trening/daoFactory/PersistException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/trening/domain/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/trening/domain/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/trening/domain/config.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/trening/mySql/MySqlDaoFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/trening/mySql/MySqlLessonDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/trening/mySql/MySqlMarkDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/trening/mySql/MySqlStudentDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/daoFactory/DaoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/DaoFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/daoFactory/PersistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/PersistException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/Lesson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Lesson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/Mark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Mark.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mySql/MySqlDaoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mySqlDAO/MySqlDaoFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mySql/MySqlLessonDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mySqlDAO/MySqlLessonDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mySql/MySqlMarkDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mySqlDAO/MySqlMarkDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mySql/MySqlStudentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mySqlDAO/MySqlStudentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/trening/daoFactory/DaoFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/trening/daoFactory/PersistException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/trening/domain/Lesson.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/trening/domain/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/trening/domain/Mark.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/trening/domain/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mySqlDAO/MySqlLessonDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mySqlDAO/MySqlLessonDao.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -135,15 +123,15 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="cell" value="59" />
-          <entry key="java" value="1922" />
+          <entry key="java" value="2124" />
           <entry key="properties" value="27" />
-          <entry key="txt" value="93" />
+          <entry key="txt" value="169" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1922" />
-          <entry key="PLAIN_TEXT" value="93" />
+          <entry key="JAVA" value="2124" />
+          <entry key="PLAIN_TEXT" value="169" />
           <entry key="Properties" value="27" />
           <entry key="Scratch" value="59" />
         </counts>
@@ -155,8 +143,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="392">
+              <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -164,14 +152,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mySqlDAO/MySqlLessonDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+            <state relative-caret-position="216">
+              <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#MySqlLessonDao#0;class#MySqlLessonDao#0" />
                 <element signature="method#getAll#0;class#MySqlLessonDao#0" />
                 <element signature="method#update#0;class#MySqlLessonDao#0" />
                 <element signature="method#delete#0;class#MySqlLessonDao#0" />
@@ -186,8 +173,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mySqlDAO/MySqlDaoFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1584">
-              <caret line="72" column="40" selection-end-line="80" />
+            <state relative-caret-position="-858">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -198,8 +185,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mySqlDAO/MySqlMarkDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="14" column="28" lean-forward="true" selection-end-line="101" />
+            <state relative-caret-position="238">
+              <caret line="17" column="62" lean-forward="true" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
               <folding>
                 <element signature="method#create#0;class#MySqlMarkDao#0" />
                 <element signature="method#getAll#0;class#MySqlMarkDao#0" />
@@ -218,10 +205,9 @@
         <entry file="file://$PROJECT_DIR$/src/mySqlDAO/MySqlStudentDao.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="308">
-              <caret line="14" column="28" selection-end-line="126" />
+              <caret line="23" column="55" lean-forward="true" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#MySqlStudentDao#0;class#MySqlStudentDao#0" />
                 <element signature="method#update#0;class#MySqlStudentDao#0" />
                 <element signature="method#create#0;class#MySqlStudentDao#0" />
                 <element signature="method#delete#0;class#MySqlStudentDao#0" />
@@ -237,11 +223,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/objects/Lesson.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="66">
+              <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -323,6 +309,10 @@
         <option value="$PROJECT_DIR$/src/mySql/MySqlLessonDao.java" />
         <option value="$PROJECT_DIR$/src/dao/PersistException.java" />
         <option value="$PROJECT_DIR$/src/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/mySqlDAO/MySqlMarkDao.java" />
+        <option value="$PROJECT_DIR$/src/mySqlDAO/MySqlStudentDao.java" />
+        <option value="$PROJECT_DIR$/src/mySqlDAO/MySqlDaoFactory.java" />
+        <option value="$PROJECT_DIR$/src/mySqlDAO/MySqlLessonDao.java" />
       </list>
     </option>
   </component>
@@ -397,7 +387,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548840013600" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548845108785" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -480,7 +470,7 @@
       <workItem from="1548744936698" duration="4522000" />
       <workItem from="1548782970152" duration="1074000" />
       <workItem from="1548794837978" duration="5777000" />
-      <workItem from="1548837265350" duration="2183000" />
+      <workItem from="1548837265350" duration="7104000" />
     </task>
     <task id="LOCAL-00001" summary="second commit">
       <created>1548449271027</created>
@@ -531,16 +521,24 @@
       <option name="project" value="LOCAL" />
       <updated>1548776582415</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="7 commit.&#10;30/01/19&#10;11.22&#10;New names of Classes, new directories.&#10;Create void,">
+      <created>1548840183957</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1548840183957</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66512000" />
+    <option name="totallyTimeSpent" value="71433000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19280206" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19280206" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -549,7 +547,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32974428" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32974428" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4993573" visible="true" weight="0.22880216" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39973083" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -558,7 +556,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32974428" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50064266" side_tool="true" weight="0.32974428" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32974428" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -623,17 +621,12 @@
     <MESSAGE value="5 commit" />
     <MESSAGE value="6 commit." />
     <MESSAGE value="6 commit.Exceptions." />
-    <option name="LAST_COMMIT_MESSAGE" value="6 commit.Exceptions." />
+    <MESSAGE value="7 commit.&#10;30/01/19&#10;11.22&#10;New names of Classes, new directories.&#10;Create void," />
+    <option name="LAST_COMMIT_MESSAGE" value="7 commit.&#10;30/01/19&#10;11.22&#10;New names of Classes, new directories.&#10;Create void," />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/mySqlDAO/MySqlLessonDao.java</url>
-          <line>19</line>
-          <properties />
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/mySqlDAO/MySqlStudentDao.java</url>
           <line>22</line>
@@ -651,6 +644,30 @@
           <line>39</line>
           <properties />
           <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/Main.java</url>
+          <line>18</line>
+          <properties />
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/Main.java</url>
+          <line>19</line>
+          <properties />
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/Main.java</url>
+          <line>20</line>
+          <properties />
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/Main.java</url>
+          <line>21</line>
+          <properties />
+          <option name="timeStamp" value="61" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -731,54 +748,6 @@
     <entry file="file://$PROJECT_DIR$/src/resources/config.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mySqlDAO/MySqlDaoFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1584">
-          <caret line="72" column="40" selection-end-line="80" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mySqlDAO/MySqlMarkDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="14" column="28" lean-forward="true" selection-end-line="101" />
-          <folding>
-            <element signature="method#create#0;class#MySqlMarkDao#0" />
-            <element signature="method#getAll#0;class#MySqlMarkDao#0" />
-            <element signature="method#update#0;class#MySqlMarkDao#0" />
-            <element signature="method#delete#0;class#MySqlMarkDao#0" />
-            <element signature="method#getDeleteQuery#0;class#MySqlMarkDao#0" />
-            <element signature="method#prepareStatementForInsert#0;class#MySqlMarkDao#0" />
-            <element signature="method#prepareStatementForUpdate#0;class#MySqlMarkDao#0" />
-            <element signature="method#prepareStatementForDelete#0;class#MySqlMarkDao#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mySqlDAO/MySqlStudentDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="28" selection-end-line="126" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#MySqlStudentDao#0;class#MySqlStudentDao#0" />
-            <element signature="method#update#0;class#MySqlStudentDao#0" />
-            <element signature="method#create#0;class#MySqlStudentDao#0" />
-            <element signature="method#delete#0;class#MySqlStudentDao#0" />
-            <element signature="method#getSelectQuery#0;class#MySqlStudentDao#0" />
-            <element signature="method#getAll#0;class#MySqlStudentDao#0" />
-            <element signature="method#getCreateQuery#0;class#MySqlStudentDao#0" />
-            <element signature="method#getUpdateQuery#0;class#MySqlStudentDao#0" />
-            <element signature="method#prepareStatementForUpdate#0;class#MySqlStudentDao#0" />
-            <element signature="method#prepareStatementForInsert#0;class#MySqlStudentDao#0" />
-            <element signature="method#prepareStatementForDelete#0;class#MySqlStudentDao#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/objects/Mark.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -812,21 +781,74 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        <state relative-caret-position="392">
+          <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mySqlDAO/MySqlLessonDao.java">
+    <entry file="file://$PROJECT_DIR$/src/mySqlDAO/MySqlDaoFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+        <state relative-caret-position="-858">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#MySqlLessonDao#0;class#MySqlLessonDao#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mySqlDAO/MySqlMarkDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="62" lean-forward="true" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
+          <folding>
+            <element signature="method#create#0;class#MySqlMarkDao#0" />
+            <element signature="method#getAll#0;class#MySqlMarkDao#0" />
+            <element signature="method#update#0;class#MySqlMarkDao#0" />
+            <element signature="method#delete#0;class#MySqlMarkDao#0" />
+            <element signature="method#getDeleteQuery#0;class#MySqlMarkDao#0" />
+            <element signature="method#prepareStatementForInsert#0;class#MySqlMarkDao#0" />
+            <element signature="method#prepareStatementForUpdate#0;class#MySqlMarkDao#0" />
+            <element signature="method#prepareStatementForDelete#0;class#MySqlMarkDao#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mySqlDAO/MySqlStudentDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="23" column="55" lean-forward="true" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#update#0;class#MySqlStudentDao#0" />
+            <element signature="method#create#0;class#MySqlStudentDao#0" />
+            <element signature="method#delete#0;class#MySqlStudentDao#0" />
+            <element signature="method#getSelectQuery#0;class#MySqlStudentDao#0" />
+            <element signature="method#getAll#0;class#MySqlStudentDao#0" />
+            <element signature="method#getCreateQuery#0;class#MySqlStudentDao#0" />
+            <element signature="method#getUpdateQuery#0;class#MySqlStudentDao#0" />
+            <element signature="method#prepareStatementForUpdate#0;class#MySqlStudentDao#0" />
+            <element signature="method#prepareStatementForInsert#0;class#MySqlStudentDao#0" />
+            <element signature="method#prepareStatementForDelete#0;class#MySqlStudentDao#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/Lesson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mySqlDAO/MySqlLessonDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#getAll#0;class#MySqlLessonDao#0" />
             <element signature="method#update#0;class#MySqlLessonDao#0" />
             <element signature="method#delete#0;class#MySqlLessonDao#0" />
@@ -834,13 +856,6 @@
             <element signature="method#prepareStatementForUpdate#0;class#MySqlLessonDao#0" />
             <element signature="method#prepareStatementForDelete#0;class#MySqlLessonDao#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/Lesson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>

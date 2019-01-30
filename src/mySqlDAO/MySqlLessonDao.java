@@ -36,6 +36,7 @@ public class MySqlLessonDao  {
         }
         System.out.println("Таблица Lesson обновлена успешно");
     }
+
     public void getAll () {
         System.out.println("Все предметы");
         try (PreparedStatement stm = connection.prepareStatement(getAllQuery())) {
