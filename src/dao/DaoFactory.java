@@ -1,8 +1,8 @@
-package daoFactory;
+package dao;
 
-import mySql.MySqlLessonDao;
-import mySql.MySqlMarkDao;
-import mySql.MySqlStudentDao;
+import mySqlDAO.MySqlLessonDao;
+import mySqlDAO.MySqlMarkDao;
+import mySqlDAO.MySqlStudentDao;
 import java.sql.SQLException;
 
 public interface DaoFactory {

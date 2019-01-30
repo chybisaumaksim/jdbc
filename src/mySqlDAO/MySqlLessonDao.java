@@ -1,7 +1,7 @@
-package mySql;
+package mySqlDAO;
 
-import daoFactory.PersistException;
-import domain.Lesson;
+import dao.PersistException;
+import objects.Lesson;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,36 +12,29 @@ import java.util.List;
 public class MySqlLessonDao  {
 
     private Connection connection;
-        private PreparedStatement statementCreate=null;
-        private PreparedStatement statementUpdate=null;
-        private PreparedStatement statementSelectAll=null;
-        private PreparedStatement statementSelectID=null;
-        private PreparedStatement statementDelete=null;
-
+        private PreparedStatement statementCreate;
+        private PreparedStatement statementUpdate;
+        private PreparedStatement statementDelete;
 
     protected MySqlLessonDao() throws PersistException {
         try {
             connection = MySqlDaoFactory.getConnection();
             statementCreate = connection.prepareStatement(getCreateQuery(), PreparedStatement.RETURN_GENERATED_KEYS);
             statementUpdate = connection.prepareStatement(getUpdateQuery());
-            statementSelectAll = connection.prepareStatement(getSelectQuery());
-            statementSelectID = connection.prepareStatement(getSelectQuery() + "WHERE ID = ?;");
             statementDelete = connection.prepareStatement(getDeleteQuery());
         } catch (SQLException e) {
             throw new PersistException("Ошибка при создании prepareStatement в классе "+getClass(), e);
         }
     }
 
-    public int create(Lesson lesson) throws PersistException {
-        int persistInstance;
+    public void create(Lesson lesson) throws PersistException {
         try {
             prepareStatementForInsert(statementCreate, lesson);
-            persistInstance =statementCreate.executeUpdate();
+            statementCreate.executeUpdate();
         } catch (Exception e) {
             throw new PersistException(e);
         }
         System.out.println("Таблица Lesson обновлена успешно");
-        return persistInstance;
     }
     public void getAll () {
         System.out.println("Все предметы");
@@ -76,9 +69,6 @@ public class MySqlLessonDao  {
             throw new PersistException(e);
         }
         System.out.println("Lesson deleted успешно");
-    }
-    public String getSelectQuery() {
-        return "SELECT ID, Lesson FROM Lesson ";
     }
     public String getUpdateQuery() {
         return "UPDATE Lesson SET Lesson  = ?  WHERE ID = ?";
@@ -115,4 +105,6 @@ public class MySqlLessonDao  {
             throw new PersistException(e);
         }
     }
+
 }
+

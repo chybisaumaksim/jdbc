@@ -1,24 +1,27 @@
-package domain;
-import daoFactory.DaoFactory;
-import daoFactory.PersistException;
-import mySql.MySqlDaoFactory;
-import mySql.MySqlLessonDao;
-import mySql.MySqlMarkDao;
-import mySql.MySqlStudentDao;
+package main;
+import dao.DaoFactory;
+import dao.PersistException;
+import objects.Lesson;
+import objects.Mark;
+import objects.Student;
+import mySqlDAO.MySqlDaoFactory;
+import mySqlDAO.MySqlLessonDao;
+import mySqlDAO.MySqlMarkDao;
+import mySqlDAO.MySqlStudentDao;
 
 public class Main {
     public static void main(String[] args) throws PersistException {
 
         MySqlMarkDao markDao = null;
         MySqlLessonDao lessonDao = null;
-        MySqlStudentDao studentDao=null;
+        MySqlStudentDao studentDao = null;
         try {
             DaoFactory factory = new MySqlDaoFactory();
             studentDao = factory.getMySqlStudentDao();
             lessonDao = factory.getMySqlLessonDao();
             markDao = factory.getMySqlMarkDao();
         } catch (Exception e) {
-            System.out.println("При работе с базой данных произошла ошибка.");
+            System.out.println("При работе с базой данных произошла ошибка");
         }
 //читаем всех студентов
         studentDao.getAll();

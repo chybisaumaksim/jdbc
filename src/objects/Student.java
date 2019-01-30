@@ -1,4 +1,4 @@
-package domain;
+package objects;
 
 public class Student {
     private int id;

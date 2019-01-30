@@ -1,7 +1,7 @@
-package mySql;
+package mySqlDAO;
 
-import daoFactory.PersistException;
-import domain.Student;
+import dao.PersistException;
+import objects.Student;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

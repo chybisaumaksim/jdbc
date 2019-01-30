@@ -1,4 +1,4 @@
-package domain;
+package objects;
 
 public class Mark {
     private int id;
