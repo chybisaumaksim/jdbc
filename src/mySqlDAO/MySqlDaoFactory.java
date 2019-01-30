@@ -30,7 +30,6 @@ public class MySqlDaoFactory implements DaoFactory {
             Class.forName(prop.getProperty("driver"));
             connection = DriverManager.getConnection(prop.getProperty("url"),
                     prop.getProperty("login"), prop.getProperty("password"));
-            System.out.println("dtutrewertyuytr");
         } catch (SQLException e) {
             throw new PersistException("Ошибка подключения к БД", e);
         } catch (FileNotFoundException e) {

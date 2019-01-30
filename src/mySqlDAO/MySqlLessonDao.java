@@ -2,6 +2,8 @@ package mySqlDAO;
 
 import dao.PersistException;
 import objects.Lesson;
+
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -31,7 +33,7 @@ public class MySqlLessonDao {
     }
 
     public void create(Lesson lesson) throws PersistException {
-        ResultSet generatedId;
+        ResultSet generatedId = null;
         try {
             prepareStatementForInsert(statementCreate, lesson);
             statementCreate.executeUpdate();
@@ -42,6 +44,14 @@ public class MySqlLessonDao {
             }
         } catch (Exception e) {
             throw new PersistException("Невозможно записать данные в БД", e);
+        }finally {
+            try {
+                if (generatedId != null) {
+                    generatedId.close();
+                }
+            } catch (SQLException e) {
+                throw new PersistException("Ошибка закрытия потока", e);
+            }
         }
         System.out.println("Таблица Lesson обновлена успешно");
     }
@@ -117,20 +127,5 @@ public class MySqlLessonDao {
             throw new PersistException(e);
         }
     }
-    protected List<Lesson> parseResultSet(ResultSet rs) throws PersistException {
-        LinkedList<Lesson> result = new LinkedList<>();
-        try {
-            while (rs.next()) {
-                Lesson lesson = new Lesson();
-                lesson.setId(rs.getInt(1));
-                lesson.setLesson(rs.getString(2));
-                result.add(lesson);
-            }
-        } catch (Exception e) {
-            throw new PersistException(e);
-        }
-        return result;
-    }
-
 }
 

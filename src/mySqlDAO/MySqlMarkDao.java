@@ -11,27 +11,41 @@ import java.sql.SQLException;
     private PreparedStatement statementCreate;
     private PreparedStatement statementUpdate;
     private PreparedStatement statementDelete;
+        private PreparedStatement statementSelectID;
 
     protected MySqlMarkDao(Connection connection) throws PersistException {
         try {
             this.connection = connection;
-            statementCreate = this.connection.prepareStatement(getCreateQuery());
-            statementUpdate = this.connection.prepareStatement(getUpdateQuery());
-            statementDelete = this.connection.prepareStatement(getDeleteQuery());
+            statementCreate = connection.prepareStatement(getCreateQuery());
+            statementUpdate = connection.prepareStatement(getUpdateQuery());
+            statementDelete = connection.prepareStatement(getDeleteQuery());
+            statementSelectID = connection.prepareStatement(SelectIdQuery());
         } catch (SQLException e) {
             throw new PersistException("Ошибка при создании prepareStatement в классе "+getClass(), e);
         }
     }
-    public int create(Mark mark) throws PersistException {
-        int persistInstance;
+    public void create(Mark mark) throws PersistException {
+        ResultSet generatedId = null;
         try {
             prepareStatementForInsert(statementCreate, mark);
-            persistInstance =statementCreate.executeUpdate();
+            statementCreate.executeUpdate();
+            generatedId = statementCreate.getGeneratedKeys();
+            if (generatedId.next()) {
+                int id = generatedId.getInt(1);
+                statementSelectID.setInt(1, id);
+            }
         } catch (Exception e) {
-            throw new PersistException(e);
+            throw new PersistException("Невозможно записать данные в БД ", e);
+        }finally {
+            try {
+                if (generatedId != null) {
+                    generatedId.close();
+                }
+            } catch (SQLException e) {
+                throw new PersistException("Ошибка закрытия потока", e);
+            }
         }
         System.out.println("Таблица Mark обновлена успешно");
-        return persistInstance;
     }
     public void getAll () {
         System.out.println("все предметы одного студента вместе с их оценками");
@@ -73,7 +87,10 @@ import java.sql.SQLException;
     }
     public String getDeleteQuery() {return "DELETE FROM Mark WHERE id= ?;";
     }
-    protected void prepareStatementForInsert(PreparedStatement statement, Mark object) throws PersistException {
+        public String SelectIdQuery() {
+            return "SELECT id, student_Id, lesson_Id, mark FROM mark WHERE ID = ? ; ";
+        }
+        protected void prepareStatementForInsert(PreparedStatement statement, Mark object) throws PersistException {
         try {
             statement.setInt(1, object.getStudentId());
             statement.setInt(2, object.getLessonId());

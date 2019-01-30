@@ -10,23 +10,20 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class MySqlStudentDao{
     private Connection connection;
     private PreparedStatement statementCreate;
     private PreparedStatement statementUpdate;
-    private PreparedStatement statementSelectAll;
-    private PreparedStatement statementSelectID;
     private PreparedStatement statementDelete;
+    private PreparedStatement statementSelectID;
 
     protected MySqlStudentDao(Connection connection) throws PersistException {
         try {
             this.connection =connection;
-            statementCreate = this.connection.prepareStatement(getCreateQuery());
-            statementUpdate = this.connection.prepareStatement(getUpdateQuery());
-            statementSelectAll = this.connection.prepareStatement(getSelectQuery());
-            statementSelectID = this.connection.prepareStatement(getSelectQuery()+ "WHERE ID = ?;");
-            statementDelete = this.connection.prepareStatement(getDeleteQuery());
+            statementCreate = connection.prepareStatement(getCreateQuery());
+            statementUpdate = connection.prepareStatement(getUpdateQuery());
+            statementDelete = connection.prepareStatement(getDeleteQuery());
+            statementSelectID = connection.prepareStatement(SelectIdQuery());
         } catch (SQLException e) {
             throw new PersistException("Ошибка при создании prepareStatement в классе "+getClass(), e);
         }
@@ -40,16 +37,28 @@ public class MySqlStudentDao{
         }
         System.out.println("Таблица Student updated успешно");
     }
-    public int create(Student student) throws PersistException {
-        int persistInstance;
+    public void create(Student student) throws PersistException {
+        ResultSet generatedId = null;
         try {
             prepareStatementForInsert(statementCreate, student);
-            persistInstance =statementCreate.executeUpdate();
+            statementCreate.executeUpdate();
+            generatedId = statementCreate.getGeneratedKeys();
+            if (generatedId.next()) {
+                int id = generatedId.getInt(1);
+                statementSelectID.setInt(1, id);
+            }
         } catch (Exception e) {
-            throw new PersistException(e);
+            throw new PersistException("Невозможно записать данные в БД", e);
+        }finally {
+            try {
+                if (generatedId != null) {
+                    generatedId.close();
+                }
+            } catch (SQLException e) {
+                throw new PersistException("Ошибка закрытия потока ", e);
+            }
         }
         System.out.println("Таблица Student обновлена успешно");
-        return persistInstance;
     }
     public void delete(Student student) throws PersistException {
         try {
@@ -59,10 +68,6 @@ public class MySqlStudentDao{
             throw new PersistException(e);
         }
         System.out.println("студент deleted успешно");
-    }
-    public String getSelectQuery() {
-        ArrayList<Student> st=new ArrayList<>();
-        return "SELECT ID, First_Name, Second_Name, Birth_Date, Enter_Year FROM student ";
     }
     public  void getAll () {
         System.out.println("Все студенты");
@@ -93,7 +98,10 @@ public class MySqlStudentDao{
         return "UPDATE Student SET First_Name = ?, Second_Name  = ?, Birth_Date = ?, Enter_Year = ? WHERE id = ?;";
     }
     public String getDeleteQuery() {
-        return "DELETE FROM student WHERE id= ?;";
+        return "DELETE FROM STUDENT WHERE id= ?;";
+    }
+    public String SelectIdQuery() {
+        return "SELECT ID, First_Name, Second_Name, Birth_Date, Enter_Year FROM STUDENT WHERE ID = ? ; ";
     }
     protected void prepareStatementForUpdate(PreparedStatement statement, Student object) throws PersistException {
         try {
