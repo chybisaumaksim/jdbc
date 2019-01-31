@@ -1,6 +1,5 @@
 package mySqlDAO;
-import dao.DaoFactory;
-import dao.PersistException;
+import dao.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,7 +15,7 @@ public class MySqlDaoFactory implements DaoFactory {
         try {
         MySqlDaoFactory.getConnection();
     } catch (PersistException e) {
-        e.printStackTrace();
+            System.err.println("Ошибка установки подключения");
     }
 }
 
@@ -44,7 +43,7 @@ public class MySqlDaoFactory implements DaoFactory {
                     is.close();
                 }
             } catch (IOException e) {
-                throw new PersistException("Ошибка закрытия потока", e);
+                throw new PersistException("Ошибка закрытия потока InputStream", e);
             }
         }
         return connection;

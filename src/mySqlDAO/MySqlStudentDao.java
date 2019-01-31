@@ -1,8 +1,6 @@
 package mySqlDAO;
-
 import dao.PersistException;
 import objects.Student;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -32,10 +30,9 @@ public class MySqlStudentDao{
         try {
             prepareStatementForUpdate(statementUpdate, student);
             statementUpdate.executeUpdate();
-        } catch (Exception e) {
-            throw new PersistException(e);
+        } catch (SQLException e) {
+            throw new PersistException("Ошибка Sql запроса", e);
         }
-        System.out.println("Таблица Student updated успешно");
     }
     public void create(Student student) throws PersistException {
         ResultSet generatedId = null;
@@ -58,19 +55,16 @@ public class MySqlStudentDao{
                 throw new PersistException("Ошибка закрытия потока ", e);
             }
         }
-        System.out.println("Таблица Student обновлена успешно");
     }
     public void delete(Student student) throws PersistException {
         try {
             prepareStatementForDelete(statementDelete, student);
             statementDelete.executeUpdate();
-        } catch (Exception e) {
-            throw new PersistException(e);
+        } catch (SQLException e) {
+            throw new PersistException("Ошибка закрытия потока ", e);
         }
-        System.out.println("студент deleted успешно");
     }
-    public  void getAll () {
-        System.out.println("Все студенты");
+    public  void getAll () throws PersistException {
         try (PreparedStatement stm = connection.prepareStatement(getSelectAll())) {
             ResultSet rs = stm.executeQuery();
             List<Student> list = new ArrayList<>();
@@ -84,51 +78,51 @@ public class MySqlStudentDao{
                 list.add(st);
                 System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3)+" "+rs.getString(4)+" "+rs.getInt(5));
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new PersistException("Ошибка закрытия потока ", e);
         }
     }
-    public String getCreateQuery() {
+    private String getCreateQuery() {
         return "INSERT INTO student (First_Name, Second_Name, Birth_Date, Enter_Year) \n  VALUES (?, ?, ?, ?);";
     }
-    public String getSelectAll() {
+    private String getSelectAll() {
         return "SELECT ID, First_Name, Second_Name, Birth_Date, Enter_Year FROM STUDENT ";
     }
-    public String getUpdateQuery() {
+    private String getUpdateQuery() {
         return "UPDATE Student SET First_Name = ?, Second_Name  = ?, Birth_Date = ?, Enter_Year = ? WHERE id = ?;";
     }
-    public String getDeleteQuery() {
+    private String getDeleteQuery() {
         return "DELETE FROM STUDENT WHERE id= ?;";
     }
-    public String SelectIdQuery() {
+    private String SelectIdQuery() {
         return "SELECT ID, First_Name, Second_Name, Birth_Date, Enter_Year FROM STUDENT WHERE ID = ? ; ";
     }
-    protected void prepareStatementForUpdate(PreparedStatement statement, Student object) throws PersistException {
+    private void prepareStatementForUpdate(PreparedStatement statement, Student object) throws PersistException {
         try {
             statement.setString(1, object.getName());
             statement.setString(2, object.getSurname());
             statement.setString(3, object.getBirthDate());
             statement.setInt(4, object.getEnterYear());
             statement.setInt(5, object.getId());
-        } catch (Exception e) {
-            throw new PersistException(e);
+        } catch (SQLException e) {
+            throw new PersistException("Ошибка получения prepareStatementForUpdate", e);
         }
     }
-    protected void prepareStatementForInsert(PreparedStatement statement, Student object) throws PersistException {
+    private void prepareStatementForInsert(PreparedStatement statement, Student object) throws PersistException {
         try {
             statement.setString(1, object.getName());
             statement.setString(2, object.getSurname());
             statement.setString(3, object.getBirthDate());
             statement.setInt(4, object.getEnterYear());
-        } catch (Exception e) {
-            throw new PersistException(e);
+        } catch (SQLException e) {
+            throw new PersistException("Ошибка получения prepareStatementForInsert", e);
         }
     }
-    protected void prepareStatementForDelete(PreparedStatement statement, Student object) throws PersistException {
+    private void prepareStatementForDelete(PreparedStatement statement, Student object) throws PersistException {
         try {
             statement.setInt(1, object.getId());
-        } catch (Exception e) {
-            throw new PersistException(e);
+        } catch (SQLException e) {
+            throw new PersistException("Ошибка получения prepareStatementForDelete", e);
         }
     }
 }

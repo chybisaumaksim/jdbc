@@ -1,15 +1,11 @@
 package mySqlDAO;
-
 import dao.PersistException;
 import objects.Lesson;
-
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class MySqlLessonDao {
@@ -31,7 +27,6 @@ public class MySqlLessonDao {
             throw new PersistException("Ошибка при создании prepareStatement в классе "+getClass(), e);
         }
     }
-
     public void create(Lesson lesson) throws PersistException {
         ResultSet generatedId = null;
         try {
@@ -53,10 +48,8 @@ public class MySqlLessonDao {
                 throw new PersistException("Ошибка закрытия потока", e);
             }
         }
-        System.out.println("Таблица Lesson обновлена успешно");
     }
-    public void getAll () {
-        System.out.println("Все предметы");
+    public void getAll () throws PersistException {
         try (PreparedStatement stm = connection.prepareStatement(getAllQuery())) {
             ResultSet rs = stm.executeQuery();
             List<Lesson> list = new ArrayList<>();
@@ -68,63 +61,61 @@ public class MySqlLessonDao {
                 System.out.println(rs.getInt(1)+" "+rs.getString(2));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new PersistException("Ошибка Sql запроса", e);
         }
     }
     public void update (Lesson lesson) throws PersistException {
         try {
             prepareStatementForUpdate(statementUpdate, lesson);
             statementUpdate.executeUpdate();
-        } catch (Exception e) {
-            throw new PersistException(e);
+        } catch (SQLException e) {
+            throw new PersistException("Ошибка Sql запроса", e);
         }
-        System.out.println("Таблица Lesson updated успешно");
     }
     public void delete (Lesson lesson) throws PersistException {
         try {
             prepareStatementForDelete(statementDelete, lesson);
             statementDelete.executeUpdate();
         } catch (Exception e) {
-            throw new PersistException(e);
+            throw new PersistException("Ошибка Sql запроса", e);
         }
-        System.out.println("Lesson deleted успешно");
     }
-    public String getUpdateQuery() {
-        return "UPDATE Lesson SET Lesson  = ?  WHERE ID = ?";
+    private String getUpdateQuery() {
+        return "UPDATE Lesson SET Lesson  = ? WHERE ID = ?";
     }
-    public String getCreateQuery() {
-        return "INSERT INTO Lesson (ID, Lesson) VALUES (?, ?) ; ";
+    private String getCreateQuery() {
+        return "INSERT INTO Lesson (ID, Lesson) VALUES (?, ?); ";
     }
-    public String getDeleteQuery() {
-        return "DELETE FROM Lesson WHERE id = ?; ";
+    private String getDeleteQuery() {
+        return "DELETE FROM Lesson WHERE ID = ?; ";
     }
-    public String getAllQuery() {
+    private String getAllQuery() {
         return "SELECT ID, Lesson FROM Lesson ; ";
     }
-    public String SelectIdQuery() {
-        return "SELECT ID, Lesson FROM Lesson WHERE ID = ? ; ";
+    private String SelectIdQuery() {
+        return "SELECT ID, Lesson FROM Lesson WHERE ID = ? ;";
     }
-    protected void prepareStatementForInsert(PreparedStatement statement, Lesson object) throws PersistException {
+    private void prepareStatementForInsert(PreparedStatement statement, Lesson object) throws PersistException {
         try {
             statement.setInt(1, object.getId());
             statement.setString(2, object.getLesson());
-        } catch (Exception e) {
-            throw new PersistException(e);
+        } catch (SQLException e) {
+            throw new PersistException("Ошибка получения prepareStatementForInsert", e);
         }
     }
-    protected void prepareStatementForUpdate(PreparedStatement statement, Lesson object) throws PersistException {
+    private void prepareStatementForUpdate(PreparedStatement statement, Lesson object) throws PersistException {
         try {
             statement.setInt(1, object.getId());
             statement.setString(2, object.getLesson());
-        } catch (Exception e) {
-            throw new PersistException(e);
+        } catch (SQLException e) {
+            throw new PersistException("Ошибка получения prepareStatementForUpdate", e);
         }
     }
-    protected void prepareStatementForDelete(PreparedStatement statement, Lesson object) throws PersistException {
+    private void prepareStatementForDelete(PreparedStatement statement, Lesson object) throws PersistException {
         try {
             statement.setInt(1, object.getId());
-        } catch (Exception e) {
-            throw new PersistException(e);
+        } catch (SQLException e) {
+            throw new PersistException("Ошибка получения prepareStatementForDelete", e);
         }
     }
 }
