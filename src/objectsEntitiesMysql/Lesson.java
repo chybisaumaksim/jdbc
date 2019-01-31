@@ -1,4 +1,4 @@
-package objects;
+package objectsEntitiesMysql;
 
 public class Lesson {
     private int id;

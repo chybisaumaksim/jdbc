@@ -1,6 +1,6 @@
 package mySqlDAO;
 import dao.PersistException;
-import objects.Lesson;
+import objectsEntitiesMysql.Lesson;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

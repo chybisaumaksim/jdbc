@@ -1,6 +1,6 @@
 package mySqlDAO;
 import dao.PersistException;
-import objects.Student;
+import objectsEntitiesMysql.Student;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -26,7 +26,7 @@ public class MySqlStudentDao{
             throw new PersistException("Ошибка при создании prepareStatement в классе "+getClass(), e);
         }
     }
-    public void update (Student student) throws PersistException {
+    public void update(Student student) throws PersistException {
         try {
             prepareStatementForUpdate(statementUpdate, student);
             statementUpdate.executeUpdate();
@@ -76,7 +76,9 @@ public class MySqlStudentDao{
                 st.setBirthDate(rs.getString(4));
                 st.setEnterYear(rs.getInt(5));
                 list.add(st);
-                System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3)+" "+rs.getString(4)+" "+rs.getInt(5));
+                System.out.println(rs.getInt(1)+" "
+                        +rs.getString(2)+" "+rs.getString(3)
+                        +" "+rs.getString(4)+" "+rs.getInt(5));
             }
         } catch (SQLException e) {
             throw new PersistException("Ошибка закрытия потока ", e);

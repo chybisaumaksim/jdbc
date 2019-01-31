@@ -1,6 +1,6 @@
 package main;
 import dao.*;
-import objects.*;
+import objectsEntitiesMysql.*;
 import mySqlDAO.*;
 
 import java.sql.SQLException;
