@@ -156,10 +156,10 @@ public class MySqlStudentDao {
             throw new PersistException("Ошибка закрытия statementSelectID ", e);
         }
         try {
-            if(connection != null)
+            if(connection == null)
                 connection.close();
         } catch (SQLException e) {
-            throw new PersistException("Ошибка закрытия Connection ", e);
+            throw new PersistException("Ошибка закрытия Connection", e);
         }
     }
 }

@@ -19,7 +19,6 @@ public MySqlDaoFactory() throws PersistException {
         throw new PersistException("Ошибка установки подключения", e);
     }
 }
-
 //    static {
 //        try {
 //            MySqlDaoFactory.getConnection();
@@ -69,24 +68,14 @@ public MySqlDaoFactory() throws PersistException {
 
     @Override
     public MySqlMarkDao getMySqlMarkDao() throws PersistException {
-        if(connection!=null){
             return new MySqlMarkDao(connection);
-        }
-        return null;
     }
     @Override
     public MySqlStudentDao getMySqlStudentDao() throws PersistException {
-        if(connection!=null){
             return new MySqlStudentDao(connection);
-        }
-        return null;
     }
-
     @Override
     public MySqlLessonDao getMySqlLessonDao()throws PersistException {
-        if(connection!=null){
             return new MySqlLessonDao(connection);
-        }
-        return null;
     }
 }
