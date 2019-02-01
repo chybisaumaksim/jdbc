@@ -1,12 +1,15 @@
-package mySqlDAO;
-import dao.PersistException;
-import objectsEntitiesMysql.Mark;
+package chester.lesson10.mySqlDAO;
+import chester.lesson10.dao.PersistException;
+import chester.lesson10.objectsEntitiesMysql.Mark;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
-    public class MySqlMarkDao {
+public class MySqlMarkDao {
     private Connection connection;
     private PreparedStatement statementCreate;
     private PreparedStatement statementUpdate;
@@ -35,7 +38,7 @@ import java.sql.SQLException;
                 statementSelectID.setInt(1, id);
             }
         } catch (Exception e) {
-            throw new PersistException("Невозможно записать данные в БД ", e);
+            throw new PersistException(" Невозможно записать данные в БД", e);
         }finally {
             try {
                 if (generatedId != null) {
@@ -46,15 +49,29 @@ import java.sql.SQLException;
             }
         }
     }
-    public void getAll () throws PersistException {
+    public List<Mark> getAll () throws PersistException {
+        ArrayList list= new ArrayList();
+        ResultSet rs=null;
         try (PreparedStatement stm = connection.prepareStatement(getSelectAll())) {
-            ResultSet rs = stm.executeQuery();
+            rs = stm.executeQuery();
             while (rs.next()) {
-                System.out.println(rs.getInt(1)+" "+rs.getInt(2)+" "+rs.getInt(3)+" "+rs.getInt(4));
+                while (rs.next()) {
+                    list.add(rs.getInt(1)+" "+rs.getInt(2)
+                            +" "+rs.getInt(3)+" "+rs.getInt(4));
+                }
             }
         } catch (SQLException e) {
             throw new PersistException("Ошибка Sql запроса", e);
+        }finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+            } catch (SQLException e) {
+                throw new PersistException("Ошибка закрытия потока", e);
+            }
         }
+        return  list;
     }
     public void update (Mark mark) throws PersistException {
         try {
@@ -109,6 +126,38 @@ import java.sql.SQLException;
         } catch (Exception e) {
             throw new PersistException("Ошибка получения prepareStatementForDelete", e);
 
+        }
+    }
+    public void close() throws PersistException {
+        try {
+            if(statementDelete != null)
+                statementDelete.close();
+        } catch (SQLException e) {
+            throw new PersistException("Ошибка закрытия statementDelete ", e);
+        }
+        try {
+            if(statementCreate != null)
+                statementCreate.close();
+        } catch (SQLException e) {
+            throw new PersistException("Ошибка закрытия statementCreate ", e);
+        }
+        try {
+            if(statementUpdate != null)
+                statementUpdate.close();
+        } catch (SQLException e) {
+            throw new PersistException("Ошибка закрытия statementUpdate ", e);
+        }
+        try {
+            if(statementSelectID != null)
+                statementSelectID.close();
+        } catch (SQLException e) {
+            throw new PersistException("Ошибка  закрытия statementSelectID ", e);
+        }
+        try {
+            if(connection != null)
+                connection.close();
+        } catch (SQLException e) {
+            throw new PersistException("Ошибка закрытия Connection ", e);
         }
     }
 }

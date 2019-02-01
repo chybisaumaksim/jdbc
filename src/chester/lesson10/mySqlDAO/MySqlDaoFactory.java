@@ -1,5 +1,6 @@
-package mySqlDAO;
-import dao.*;
+package chester.lesson10.mySqlDAO;
+import chester.lesson10.dao.DaoFactory;
+import chester.lesson10.dao.PersistException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,20 +12,29 @@ import java.util.Properties;
 public class MySqlDaoFactory implements DaoFactory {
     private static Connection connection;
 
-    static {
-        try {
+public MySqlDaoFactory() throws PersistException {
+    try {
         MySqlDaoFactory.getConnection();
     } catch (PersistException e) {
-            System.err.println("Ошибка установки подключения");
+        throw new PersistException("Ошибка установки подключения", e);
     }
 }
+
+//    static {
+//        try {
+//            MySqlDaoFactory.getConnection();
+//        } catch (PersistException e) {
+//            System.err.println("Ошибка установки подключения");
+//        }
+//    }
+
 
     private static Connection getConnection() throws PersistException {
         Properties prop = new Properties();
         InputStream is=null;
         try {
             is = MySqlDaoFactory.class.getClassLoader()
-                    .getResourceAsStream("resources/config.properties");
+                    .getResourceAsStream("chester/lesson10/resources/config.properties");
             prop.load(is);
             Class.forName(prop.getProperty("driver"));
             connection = DriverManager.getConnection(prop.getProperty("url"),
@@ -45,20 +55,38 @@ public class MySqlDaoFactory implements DaoFactory {
             } catch (IOException e) {
                 throw new PersistException("Ошибка закрытия потока InputStream", e);
             }
+            try {
+                if (is != null) {
+                    is.close();
+                }
+            } catch (IOException e) {
+                throw new PersistException("Ошибка закрытия потока InputStream", e);
+            }
         }
         return connection;
     }
 
+
     @Override
     public MySqlMarkDao getMySqlMarkDao() throws PersistException {
-        return new MySqlMarkDao(connection);
+        if(connection!=null){
+            return new MySqlMarkDao(connection);
+        }
+        return null;
     }
     @Override
     public MySqlStudentDao getMySqlStudentDao() throws PersistException {
-        return new MySqlStudentDao(connection);
+        if(connection!=null){
+            return new MySqlStudentDao(connection);
+        }
+        return null;
     }
+
     @Override
     public MySqlLessonDao getMySqlLessonDao()throws PersistException {
-        return new MySqlLessonDao(connection);
+        if(connection!=null){
+            return new MySqlLessonDao(connection);
+        }
+        return null;
     }
 }
