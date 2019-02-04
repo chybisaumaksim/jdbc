@@ -3,8 +3,6 @@ import chester.lesson10.dao.DaoFactory;
 import chester.lesson10.dao.PersistException;
 import chester.lesson10.mySqlDAO.*;
 import chester.lesson10.objectsEntitiesMysql.*;
-
-import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.List;
@@ -86,28 +84,28 @@ public class Main {
             ls3.setId(7);
             lessonDao.delete(ls3);
         }catch (SQLException e) {
-            throw new PersistException("Ошибка Sql запроса в классе Main", e);
+            System.err.println("Ошибка Sql запроса в классе Main");
         }finally {
             try {
-                if (studentDao!= null) {
+                if (studentDao != null) {
                     studentDao.close();
                 }
-            }catch (Exception e) {
-                throw new PersistException("Ошибка закрытия studentDao", e);
+            } catch (PersistException e) {
+                System.err.println("Ошибка закрытия studentDao"+e.getMessage());
             }
             try {
-                if (lessonDao!= null) {
-                    lessonDao.close();
+                        if (lessonDao!= null) {
+                            lessonDao.close();
                 }
-            }catch (Exception e) {
-                throw new PersistException("Ошибка закрытия lessonDao", e);
+            }catch (PersistException e) {
+                System.err.println("Ошибка закрытия lessonDao"+e.getMessage());
             }
             try {
                 if (markDao!= null) {
                     markDao.close();
                 }
-            }catch (Exception e) {
-                throw new PersistException("Ошибка закрытия markDao", e);
+            }catch (PersistException e) {
+                System.err.println("Ошибка закрытия markDao"+e.getMessage());
             }
         }
     }
