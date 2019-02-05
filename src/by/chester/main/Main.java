@@ -9,7 +9,6 @@ import by.chester.objectsEntitiesMysql.Student;
 import by.chester.dao.DaoFactory;
 import by.chester.dao.PersistException;
 import java.sql.SQLException;
-import java.util.Iterator;
 import java.util.List;
 
 public class Main {
@@ -25,21 +24,20 @@ public class Main {
             markDao = factory.getMySqlMarkDao();
 //читаем всех студентов
             List<Student> students = studentDao.getAll();
-            Iterator iterator = students.iterator();
-            while (iterator.hasNext()) {
-                System.out.println(iterator.next());
+            for (Student st: students) {
+                System.out.println(st.getId()+" "+st.getName()+" "+st.getSurname()
+                        +" "+st.getBirthDate()+" "+st.getEnterYear());
             }
 //получаем все предметы одного студента вместе с их оценками
             List<Mark> marks = markDao.getAll();
-            Iterator iterator2 = marks.iterator();
-            while (iterator2.hasNext()) {
-                System.out.println(iterator2.next());
+            for (Mark mk: marks) {
+                System.out.println(mk.getId()+" "+mk.getStudentId()+" "
+                        +mk.getLessonId()+" "+mk.getMark());
             }
 //получаем все предметы
             List<Lesson> lessons = lessonDao.getAll();
-            Iterator iterator3 = lessons.iterator();
-            while (iterator3.hasNext()) {
-                System.out.println(iterator3.next());
+            for (Lesson ls: lessons) {
+                System.out.println(ls.getId()+" "+ls.getLesson());
             }
 //обновляем студента
             Student st4 = new Student();

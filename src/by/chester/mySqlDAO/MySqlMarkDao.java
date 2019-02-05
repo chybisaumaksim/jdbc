@@ -1,4 +1,5 @@
 package by.chester.mySqlDAO;
+import by.chester.objectsEntitiesMysql.Lesson;
 import by.chester.objectsEntitiesMysql.Mark;
 import by.chester.dao.PersistException;
 
@@ -55,11 +56,13 @@ public class MySqlMarkDao {
         try (PreparedStatement stm = connection.prepareStatement(getSelectAll())) {
             rs = stm.executeQuery();
             while (rs.next()) {
-                while (rs.next()) {
-                    list.add(rs.getInt(1)+" "+rs.getInt(2)
-                            +" "+rs.getInt(3)+" "+rs.getInt(4));
-                }
-            }
+                        Mark m = new Mark();
+                        m.setId(rs.getInt(1));
+                        m.setStudentId(rs.getInt(2));
+                        m.setLessonId(rs.getInt(3));
+                        m.setMark(rs.getInt(4));
+                        list.add(m);
+                    }
         } catch (SQLException e) {
             throw new PersistException("Ошибка Sql запроса", e);
         }finally {

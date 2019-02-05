@@ -1,5 +1,6 @@
 package by.chester.mySqlDAO;
 import by.chester.dao.PersistException;
+import by.chester.objectsEntitiesMysql.Mark;
 import by.chester.objectsEntitiesMysql.Student;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -70,10 +71,17 @@ public class MySqlStudentDao {
         try (PreparedStatement stm = connection.prepareStatement(getSelectAll())){
             rs = stm.executeQuery();
             while (rs.next()) {
-                list.add(rs.getInt(1)+" "
-                        +rs.getString(2)+" "+rs.getString(3)
-                        +" "+rs.getString(4)+" "+rs.getInt(5));
-        }
+//                list.add(rs.getInt(1)+" "
+//                        +rs.getString(2)+" "+rs.getString(3)
+//                        +" "+rs.getString(4)+" "+rs.getInt(5));
+                Student st = new Student();
+                st.setId(rs.getInt(1));
+                st.setName(rs.getString(2));
+                st.setSurname(rs.getString(3));
+                st.setBirthDate(rs.getString(4));
+                st.setEnterYear(rs.getInt(5));
+                list.add(st);
+            }
         } catch (SQLException e) {
             throw new PersistException("Ошибка закрытия потока ", e);
         }finally {

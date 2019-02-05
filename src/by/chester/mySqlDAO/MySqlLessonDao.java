@@ -10,7 +10,7 @@ import java.util.List;
 
 public class MySqlLessonDao {
 
-    private Connection connection;
+    private static Connection connection;
     private PreparedStatement statementCreate;
     private PreparedStatement statementUpdate;
     private PreparedStatement statementDelete;
@@ -49,13 +49,16 @@ public class MySqlLessonDao {
             }
         }
     }
-    public List<Lesson> getAll () throws PersistException {
+    public static List<Lesson> getAll() throws PersistException {
         ResultSet rs=null;
         List list = new ArrayList<>();
         try (PreparedStatement stm = connection.prepareStatement(getAllQuery())) {
             rs = stm.executeQuery();
             while (rs.next()) {
-                list.add(rs.getInt(1)+" "+rs.getString(2));
+                Lesson l = new Lesson();
+                l.setId(rs.getInt(1));
+                l.setLesson(rs.getString(2));
+                list.add(l);
             }
         } catch (SQLException e) {
             throw new PersistException("Ошибка Sql запроса", e);
@@ -95,7 +98,7 @@ public class MySqlLessonDao {
     private String getDeleteQuery() {
         return "DELETE FROM Lesson WHERE ID = ?; ";
     }
-    private String getAllQuery() {
+    private static String getAllQuery() {
         return "SELECT ID, Lesson FROM Lesson ; ";
     }
     private String SelectIdQuery() {
