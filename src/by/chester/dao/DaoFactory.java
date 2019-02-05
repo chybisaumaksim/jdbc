@@ -1,7 +1,7 @@
-    package chester.lesson10.dao;
-    import chester.lesson10.mySqlDAO.MySqlLessonDao;
-    import chester.lesson10.mySqlDAO.MySqlMarkDao;
-    import chester.lesson10.mySqlDAO.MySqlStudentDao;
+    package by.chester.dao;
+    import by.chester.mySqlDAO.MySqlLessonDao;
+    import by.chester.mySqlDAO.MySqlStudentDao;
+    import by.chester.mySqlDAO.MySqlMarkDao;
 
     import java.sql.SQLException;
 

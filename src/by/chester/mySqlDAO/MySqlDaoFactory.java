@@ -1,6 +1,6 @@
-package chester.lesson10.mySqlDAO;
-import chester.lesson10.dao.DaoFactory;
-import chester.lesson10.dao.PersistException;
+package by.chester.mySqlDAO;
+import by.chester.dao.DaoFactory;
+import by.chester.dao.PersistException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -33,7 +33,7 @@ public MySqlDaoFactory() throws PersistException {
         InputStream is=null;
         try {
             is = MySqlDaoFactory.class.getClassLoader()
-                    .getResourceAsStream("chester/lesson10/resources/config.properties");
+                    .getResourceAsStream("by/chester/resources/config.properties");
             prop.load(is);
             Class.forName(prop.getProperty("driver"));
             connection = DriverManager.getConnection(prop.getProperty("url"),

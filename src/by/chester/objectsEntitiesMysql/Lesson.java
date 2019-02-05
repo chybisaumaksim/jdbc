@@ -1,4 +1,4 @@
-package chester.lesson10.objectsEntitiesMysql;
+package by.chester.objectsEntitiesMysql;
 
 public class Lesson {
     private int id;

@@ -1,4 +1,4 @@
-package chester.lesson10.dao;
+package by.chester.dao;
 
 public class PersistException extends Exception {
 

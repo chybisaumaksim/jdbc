@@ -1,6 +1,6 @@
-package chester.lesson10.mySqlDAO;
-import chester.lesson10.dao.PersistException;
-import chester.lesson10.objectsEntitiesMysql.Mark;
+package by.chester.mySqlDAO;
+import by.chester.objectsEntitiesMysql.Mark;
+import by.chester.dao.PersistException;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
