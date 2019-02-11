@@ -1,6 +1,10 @@
-package by.chester.objectsEntitiesMysql;
+package by.chester.entities;
 
-public class Mark {
+import by.chester.dao.Identified;
+
+import java.io.Serializable;
+
+public class Mark implements Serializable {
     private int id;
     private int studentId;
     private int lessonId;

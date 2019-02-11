@@ -1,8 +1,6 @@
 package by.chester.mySqlDAO;
-import by.chester.objectsEntitiesMysql.Lesson;
-import by.chester.objectsEntitiesMysql.Mark;
+import by.chester.entities.Mark;
 import by.chester.dao.PersistException;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,7 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySqlMarkDao {
+public class MySqlMarkDao{
+
     private Connection connection;
     private PreparedStatement statementCreate;
     private PreparedStatement statementUpdate;

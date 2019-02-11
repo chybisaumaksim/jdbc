@@ -19,14 +19,6 @@ public MySqlDaoFactory() throws PersistException {
         throw new PersistException("Ошибка установки подключения", e);
     }
 }
-//    static {
-//        try {
-//            MySqlDaoFactory.getConnection();
-//        } catch (PersistException e) {
-//            System.err.println("Ошибка установки подключения");
-//        }
-//    }
-
 
     private static Connection getConnection() throws PersistException {
         Properties prop = new Properties();
@@ -52,14 +44,7 @@ public MySqlDaoFactory() throws PersistException {
                     is.close();
                 }
             } catch (IOException e) {
-                throw new PersistException("Ошибка закрытия потока InputStream", e);
-            }
-            try {
-                if (is != null) {
-                    is.close();
-                }
-            } catch (IOException e) {
-                throw new PersistException("Ошибка закрытия потока InputStream", e);
+                System.err.println("Ошибка закрытия потока InputStream"+e.getMessage());
             }
         }
         return connection;

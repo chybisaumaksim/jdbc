@@ -3,12 +3,12 @@ import by.chester.mySqlDAO.MySqlDaoFactory;
 import by.chester.mySqlDAO.MySqlLessonDao;
 import by.chester.mySqlDAO.MySqlMarkDao;
 import by.chester.mySqlDAO.MySqlStudentDao;
-import by.chester.objectsEntitiesMysql.Lesson;
-import by.chester.objectsEntitiesMysql.Mark;
-import by.chester.objectsEntitiesMysql.Student;
+import by.chester.entities.Lesson;
+import by.chester.entities.Mark;
+import by.chester.entities.Student;
 import by.chester.dao.DaoFactory;
 import by.chester.dao.PersistException;
-import java.sql.SQLException;
+
 import java.util.List;
 
 public class Main {
@@ -86,8 +86,8 @@ public class Main {
             Lesson ls3 = new Lesson();
             ls3.setId(7);
             lessonDao.delete(ls3);
-        }catch (SQLException e) {
-            System.err.println("Ошибка Sql запроса в классе Main");
+        }catch (PersistException e) {
+            throw new PersistException("Ошибка Sql запроса в классе Main", e);
         }finally {
             try {
                 if (studentDao != null) {
@@ -97,8 +97,8 @@ public class Main {
                 System.err.println("Ошибка закрытия studentDao"+e.getMessage());
             }
             try {
-                        if (lessonDao!= null) {
-                            lessonDao.close();
+                if (lessonDao!= null) {
+                    lessonDao.close();
                 }
             }catch (PersistException e) {
                 System.err.println("Ошибка закрытия lessonDao"+e.getMessage());

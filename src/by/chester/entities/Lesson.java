@@ -1,6 +1,7 @@
-package by.chester.objectsEntitiesMysql;
+package by.chester.entities;
+import java.io.Serializable;
 
-public class Lesson {
+public class Lesson implements Serializable {
     private int id;
     private String lesson;
 

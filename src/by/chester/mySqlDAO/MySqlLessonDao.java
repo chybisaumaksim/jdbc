@@ -1,6 +1,7 @@
 package by.chester.mySqlDAO;
+import by.chester.dao.GenericDao;
 import by.chester.dao.PersistException;
-import by.chester.objectsEntitiesMysql.Lesson;
+import by.chester.entities.Lesson;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,7 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySqlLessonDao {
+public class MySqlLessonDao implements GenericDao {
 
     private static Connection connection;
     private PreparedStatement statementCreate;
@@ -49,7 +50,7 @@ public class MySqlLessonDao {
             }
         }
     }
-    public static List<Lesson> getAll() throws PersistException {
+    public List<Lesson> getAll() throws PersistException {
         ResultSet rs=null;
         List list = new ArrayList<>();
         try (PreparedStatement stm = connection.prepareStatement(getAllQuery())) {
@@ -92,8 +93,8 @@ public class MySqlLessonDao {
     private String getUpdateQuery() {
         return "UPDATE Lesson SET Lesson  = ? WHERE ID = ?";
     }
-    private String getCreateQuery() {
-        return "INSERT INTO Lesson (ID, Lesson) VALUES (?, ?); ";
+    private String getCreateQuery() {    return "INSERT INTO Lesson (ID, Lesson) VALUES (?, ?); ";
+
     }
     private String getDeleteQuery() {
         return "DELETE FROM Lesson WHERE ID = ?; ";
@@ -105,12 +106,12 @@ public class MySqlLessonDao {
         return "SELECT ID, Lesson FROM Lesson WHERE ID = ? ;";
     }
     private void prepareStatementForInsert(PreparedStatement statement, Lesson object) throws PersistException {
-        try {
-            statement.setInt(1, object.getId());
-            statement.setString(2, object.getLesson());
-        } catch (SQLException e) {
-            throw new PersistException("Ошибка получения prepareStatementForInsert", e);
-        }
+            try {
+                statement.setInt(1, object.getId());
+                statement.setString(2, object.getLesson());
+            } catch (SQLException e) {
+                throw new PersistException("Ошибка получения prepareStatementForInsert", e);
+            }
     }
     private void prepareStatementForUpdate(PreparedStatement statement, Lesson object) throws PersistException {
         try {
@@ -159,6 +160,5 @@ public class MySqlLessonDao {
             throw new PersistException("Ошибка закрытия Connection ", e);
         }
     }
-
 }
 

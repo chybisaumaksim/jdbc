@@ -1,7 +1,6 @@
 package by.chester.mySqlDAO;
 import by.chester.dao.PersistException;
-import by.chester.objectsEntitiesMysql.Mark;
-import by.chester.objectsEntitiesMysql.Student;
+import by.chester.entities.Student;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,7 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySqlStudentDao {
+public class MySqlStudentDao{
+
     private Connection connection;
     private PreparedStatement statementCreate;
     private PreparedStatement statementUpdate;
@@ -71,9 +71,6 @@ public class MySqlStudentDao {
         try (PreparedStatement stm = connection.prepareStatement(getSelectAll())){
             rs = stm.executeQuery();
             while (rs.next()) {
-//                list.add(rs.getInt(1)+" "
-//                        +rs.getString(2)+" "+rs.getString(3)
-//                        +" "+rs.getString(4)+" "+rs.getInt(5));
                 Student st = new Student();
                 st.setId(rs.getInt(1));
                 st.setName(rs.getString(2));

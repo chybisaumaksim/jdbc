@@ -10,7 +10,7 @@
 
         MySqlStudentDao getMySqlStudentDao() throws PersistException;
 
-        MySqlLessonDao getMySqlLessonDao() throws PersistException, SQLException;
+        MySqlLessonDao getMySqlLessonDao() throws PersistException;
     }
 
 
