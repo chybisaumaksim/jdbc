@@ -1,5 +1,6 @@
 package by.chester.mySqlDAO;
 import by.chester.dao.PersistException;
+import by.chester.dao.StudentDao;
 import by.chester.entities.Student;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,7 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySqlStudentDao{
+public class MySqlStudentDao implements StudentDao {
 
     private Connection connection;
     private PreparedStatement statementCreate;

@@ -1,10 +1,6 @@
 package by.chester.entities;
 
-import by.chester.dao.Identified;
-
-import java.io.Serializable;
-
-public class Mark implements Serializable {
+public class Mark {
     private int id;
     private int studentId;
     private int lessonId;

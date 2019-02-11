@@ -1,7 +1,6 @@
 package by.chester.entities;
-import java.io.Serializable;
 
-public class Lesson implements Serializable {
+public class Lesson{
     private int id;
     private String lesson;
 

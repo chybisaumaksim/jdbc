@@ -1,16 +1,12 @@
-    package by.chester.dao;
-    import by.chester.mySqlDAO.MySqlLessonDao;
-    import by.chester.mySqlDAO.MySqlStudentDao;
-    import by.chester.mySqlDAO.MySqlMarkDao;
+package by.chester.dao;
 
-    import java.sql.SQLException;
+public interface DaoFactory {
 
-    public interface DaoFactory {
-        MySqlMarkDao getMySqlMarkDao() throws PersistException;
+    MarkDao getMySqlMarkDao() throws PersistException;
 
-        MySqlStudentDao getMySqlStudentDao() throws PersistException;
+    StudentDao getMySqlStudentDao() throws PersistException;
 
-        MySqlLessonDao getMySqlLessonDao() throws PersistException;
-    }
+    LessonDao getMySqlLessonDao() throws PersistException;
+}
 
 

@@ -1,22 +1,20 @@
 package by.chester.main;
+import by.chester.dao.*;
 import by.chester.mySqlDAO.MySqlDaoFactory;
 import by.chester.mySqlDAO.MySqlLessonDao;
 import by.chester.mySqlDAO.MySqlMarkDao;
-import by.chester.mySqlDAO.MySqlStudentDao;
 import by.chester.entities.Lesson;
 import by.chester.entities.Mark;
 import by.chester.entities.Student;
-import by.chester.dao.DaoFactory;
-import by.chester.dao.PersistException;
 
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws PersistException {
 
-        MySqlMarkDao markDao= null;
-        MySqlLessonDao lessonDao= null;
-        MySqlStudentDao studentDao = null;
+        MarkDao markDao= null;
+        LessonDao lessonDao= null;
+        StudentDao studentDao = null;
         try {
             DaoFactory factory = new MySqlDaoFactory();
             studentDao = factory.getMySqlStudentDao();

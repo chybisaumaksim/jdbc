@@ -1,5 +1,5 @@
 package by.chester.mySqlDAO;
-import by.chester.dao.GenericDao;
+import by.chester.dao.LessonDao;
 import by.chester.dao.PersistException;
 import by.chester.entities.Lesson;
 import java.sql.Connection;
@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySqlLessonDao implements GenericDao {
+public class MySqlLessonDao implements LessonDao {
 
     private static Connection connection;
     private PreparedStatement statementCreate;
@@ -53,7 +53,7 @@ public class MySqlLessonDao implements GenericDao {
     public List<Lesson> getAll() throws PersistException {
         ResultSet rs=null;
         List list = new ArrayList<>();
-        try (PreparedStatement stm = connection.prepareStatement(getAllQuery())) {
+        try (PreparedStatement stm = connection.prepareStatement(getSelectAll())) {
             rs = stm.executeQuery();
             while (rs.next()) {
                 Lesson l = new Lesson();
@@ -99,7 +99,7 @@ public class MySqlLessonDao implements GenericDao {
     private String getDeleteQuery() {
         return "DELETE FROM Lesson WHERE ID = ?; ";
     }
-    private static String getAllQuery() {
+    private String getSelectAll() {
         return "SELECT ID, Lesson FROM Lesson ; ";
     }
     private String SelectIdQuery() {

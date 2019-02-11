@@ -1,6 +1,6 @@
 package by.chester.mySqlDAO;
-import by.chester.dao.DaoFactory;
-import by.chester.dao.PersistException;
+import by.chester.dao.*;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,13 +12,13 @@ import java.util.Properties;
 public class MySqlDaoFactory implements DaoFactory {
     private static Connection connection;
 
-public MySqlDaoFactory() throws PersistException {
-    try {
-        MySqlDaoFactory.getConnection();
-    } catch (PersistException e) {
-        throw new PersistException("Ошибка установки подключения", e);
+    public MySqlDaoFactory()  throws PersistException {
+        try {
+            MySqlDaoFactory.getConnection();
+        } catch (PersistException e) {
+            throw new PersistException("Ошибка установки подключения", e);
+        }
     }
-}
 
     private static Connection getConnection() throws PersistException {
         Properties prop = new Properties();
@@ -52,15 +52,15 @@ public MySqlDaoFactory() throws PersistException {
 
 
     @Override
-    public MySqlMarkDao getMySqlMarkDao() throws PersistException {
-            return new MySqlMarkDao(connection);
+    public MarkDao getMySqlMarkDao() throws PersistException {
+        return new MySqlMarkDao(connection);
     }
     @Override
-    public MySqlStudentDao getMySqlStudentDao() throws PersistException {
-            return new MySqlStudentDao(connection);
+    public StudentDao getMySqlStudentDao() throws PersistException {
+        return new MySqlStudentDao(connection);
     }
     @Override
-    public MySqlLessonDao getMySqlLessonDao()throws PersistException {
-            return new MySqlLessonDao(connection);
+    public LessonDao getMySqlLessonDao()throws PersistException {
+        return new MySqlLessonDao(connection);
     }
 }
