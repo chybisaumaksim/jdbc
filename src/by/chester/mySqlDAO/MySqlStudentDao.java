@@ -108,6 +108,16 @@ public class MySqlStudentDao implements StudentDao {
     private String SelectIdQuery() {
         return "SELECT ID, First_Name, Second_Name, Birth_Date, Enter_Year FROM STUDENT WHERE ID = ? ; ";
     }
+    private void prepareStatementForInsert(PreparedStatement statement, Student object) throws PersistException {
+        try {
+            statement.setString(1, object.getName());
+            statement.setString(2, object.getSurname());
+            statement.setString(3, object.getBirthDate());
+            statement.setInt(4, object.getEnterYear());
+        } catch (SQLException e) {
+            throw new PersistException("Ошибка получения prepareStatementForInsert", e);
+        }
+    }
     private void prepareStatementForUpdate(PreparedStatement statement, Student object) throws PersistException {
         try {
             statement.setString(1, object.getName());
@@ -117,16 +127,6 @@ public class MySqlStudentDao implements StudentDao {
             statement.setInt(5, object.getId());
         } catch (SQLException e) {
             throw new PersistException("Ошибка получения prepareStatementForUpdate", e);
-        }
-    }
-    private void prepareStatementForInsert(PreparedStatement statement, Student object) throws PersistException {
-        try {
-            statement.setString(1, object.getName());
-            statement.setString(2, object.getSurname());
-            statement.setString(3, object.getBirthDate());
-            statement.setInt(4, object.getEnterYear());
-        } catch (SQLException e) {
-            throw new PersistException("Ошибка получения prepareStatementForInsert", e);
         }
     }
     private void prepareStatementForDelete(PreparedStatement statement, Student object) throws PersistException {

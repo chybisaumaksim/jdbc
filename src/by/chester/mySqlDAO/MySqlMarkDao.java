@@ -99,7 +99,7 @@ public class MySqlMarkDao implements MarkDao {
         return "INSERT INTO Mark (student_Id, lesson_Id, mark) VALUES (?, ?, ?);";
     }
     private String getUpdateQuery(){
-        return "UPDATE STUDENTS.mark  SET MARK = ? WHERE id = ?;";
+        return "UPDATE Mark SET MARK = ? WHERE id = ?;";
     }
     private String getDeleteQuery() {return "DELETE FROM Mark WHERE id= ?;"; }
     private String SelectIdQuery() {
@@ -116,8 +116,9 @@ public class MySqlMarkDao implements MarkDao {
     }
     private void prepareStatementForUpdate(PreparedStatement statement, Mark object) throws PersistException {
         try {
-            statement.setInt(2, object.getId());
             statement.setInt(1, object.getMark());
+            statement.setInt(2, object.getId());
+
         } catch (Exception e) {
             throw new PersistException("Ошибка получения prepareStatementForUpdate", e);
 

@@ -93,8 +93,7 @@ public class MySqlLessonDao implements LessonDao {
     private String getUpdateQuery() {
         return "UPDATE Lesson SET Lesson  = ? WHERE ID = ?";
     }
-    private String getCreateQuery() {    return "INSERT INTO Lesson (ID, Lesson) VALUES (?, ?); ";
-
+    private String getCreateQuery() {    return "INSERT INTO Lesson (Lesson) VALUES (?); ";
     }
     private String getDeleteQuery() {
         return "DELETE FROM Lesson WHERE ID = ?; ";
@@ -107,8 +106,7 @@ public class MySqlLessonDao implements LessonDao {
     }
     private void prepareStatementForInsert(PreparedStatement statement, Lesson object) throws PersistException {
             try {
-                statement.setInt(1, object.getId());
-                statement.setString(2, object.getLesson());
+                statement.setString(1, object.getLesson());
             } catch (SQLException e) {
                 throw new PersistException("Ошибка получения prepareStatementForInsert", e);
             }
