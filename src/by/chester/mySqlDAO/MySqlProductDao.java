@@ -1,5 +1,6 @@
 package by.chester.mySqlDAO;
 import by.chester.dao.PersistException;
+import by.chester.dao.ProductDao;
 import by.chester.entities.Product;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,7 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySqlProductDao {
+public class MySqlProductDao implements ProductDao {
 
     private Connection connection;
     private PreparedStatement statementCreate;

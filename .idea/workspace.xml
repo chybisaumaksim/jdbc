@@ -2,26 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56f62b53-582c-48dc-acd2-5944935eae8c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/by/chester/dao/AddressDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/by/chester/dao/CategoryDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/by/chester/dao/CustomerDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/by/chester/dao/OrderDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/by/chester/dao/ProductDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/by/chester/dao/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/by/chester/main/Main2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlAddressDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlCategoryDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlCustomerDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlOrderDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlProductDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlUserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by/chester/entities/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by/chester/entities/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by/chester/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by/chester/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqAddressDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlLessonDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlLessonDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlMarkDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlMarkDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlStudentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlStudentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by/chester/dao/DaoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by/chester/dao/DaoFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by/chester/dao/LessonDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by/chester/dao/MarkDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by/chester/dao/StudentDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by/chester/entities/Lesson.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by/chester/entities/Mark.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by/chester/entities/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by/chester/main/Main2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by/chester/main/Main2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlAddressDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlAddressDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlCategoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlCategoryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlCustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlCustomerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlDaoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlDaoFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlLessonDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlMarkDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlOrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlOrderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlProductDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlStudentDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by/chester/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/by/chester/resources/config.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,38 +46,7 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="students_db@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="students_db@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="students_db@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="students_db: schema" type="c314c289:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="sushi_db@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="sushi_db@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="sushi_db@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="sushi_db: schema" type="c314c289:MysqlImplModel$Schema" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="ErrorTreeViewConfiguration">
@@ -110,32 +79,33 @@
         <counts>
           <entry key="DATABASE/8ebaad25-ec29-4c3d-b924-bece6ffe82fa" value="1" />
           <entry key="SCHEMA:sushi_db" value="3" />
-          <entry key="address" value="3" />
-          <entry key="category" value="3" />
-          <entry key="class" value="23" />
-          <entry key="customer" value="2" />
+          <entry key="address" value="4" />
+          <entry key="category" value="5" />
+          <entry key="class" value="25" />
+          <entry key="customer" value="3" />
           <entry key="iml" value="3" />
-          <entry key="java" value="311" />
+          <entry key="java" value="343" />
           <entry key="lesson" value="11" />
           <entry key="lesson_id" value="1" />
           <entry key="lessons" value="3" />
           <entry key="mark" value="12" />
           <entry key="marks" value="2" />
-          <entry key="orders" value="2" />
-          <entry key="product" value="1" />
-          <entry key="properties" value="12" />
+          <entry key="orders" value="3" />
+          <entry key="product" value="2" />
+          <entry key="properties" value="13" />
           <entry key="sql" value="2" />
           <entry key="student" value="12" />
           <entry key="students" value="4" />
+          <entry key="user" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="23" />
-          <entry key="Database Element" value="55" />
+          <entry key="CLASS" value="25" />
+          <entry key="Database Element" value="62" />
           <entry key="IDEA_MODULE" value="3" />
-          <entry key="JAVA" value="311" />
-          <entry key="Properties" value="12" />
+          <entry key="JAVA" value="343" />
+          <entry key="Properties" value="13" />
           <entry key="SQL" value="1" />
           <entry key="Scratch" value="2" />
           <entry key="UML" value="4" />
@@ -143,19 +113,21 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cell" value="59" />
+          <entry key="cell" value="185" />
           <entry key="dummy" value="16" />
-          <entry key="java" value="6239" />
+          <entry key="java" value="6465" />
           <entry key="properties" value="45" />
-          <entry key="txt" value="676" />
+          <entry key="sql" value="10" />
+          <entry key="txt" value="726" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6239" />
-          <entry key="PLAIN_TEXT" value="692" />
+          <entry key="JAVA" value="6465" />
+          <entry key="PLAIN_TEXT" value="742" />
           <entry key="Properties" value="45" />
-          <entry key="Scratch" value="59" />
+          <entry key="SQL" value="10" />
+          <entry key="Scratch" value="185" />
         </counts>
       </usages-collector>
     </session>
@@ -163,10 +135,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/by/chester/entities/Address.java">
+        <entry file="file://$PROJECT_DIR$/src/by/chester/resources/config.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+            <state relative-caret-position="22">
+              <caret line="1" column="46" lean-forward="true" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/by/chester/main/Main2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://1fc60cbe-7b9e-48e2-90b9-ad71ab2e114d/schema/sushi_db/table/user">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -176,143 +169,6 @@
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlAddressDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
-              <folding>
-                <element signature="method#MySqlAddressDao#0;class#MySqlAddressDao#0" />
-                <element signature="method#create#0;class#MySqlAddressDao#0" />
-                <element signature="method#getAll#0;class#MySqlAddressDao#0" />
-                <element signature="method#update#0;class#MySqlAddressDao#0" />
-                <element signature="method#delete#0;class#MySqlAddressDao#0" />
-                <element signature="method#getUpdateQuery#0;class#MySqlAddressDao#0" />
-                <element signature="method#getCreateQuery#0;class#MySqlAddressDao#0" />
-                <element signature="method#getSelectAll#0;class#MySqlAddressDao#0" />
-                <element signature="method#SelectIdQuery#0;class#MySqlAddressDao#0" />
-                <element signature="method#prepareStatementForInsert#0;class#MySqlAddressDao#0" />
-                <element signature="method#prepareStatementForUpdate#0;class#MySqlAddressDao#0" />
-                <element signature="method#prepareStatementForDelete#0;class#MySqlAddressDao#0" />
-                <element signature="method#close#0;class#MySqlAddressDao#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://1fc60cbe-7b9e-48e2-90b9-ad71ab2e114d/schema/sushi_db/table/address">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlMarkDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="101" column="21" lean-forward="true" selection-start-line="101" selection-start-column="21" selection-end-line="101" selection-end-column="56" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#MySqlMarkDao#0;class#MySqlMarkDao#0" />
-                <element signature="method#create#0;class#MySqlMarkDao#0" />
-                <element signature="method#getAll#0;class#MySqlMarkDao#0" />
-                <element signature="method#update#0;class#MySqlMarkDao#0" />
-                <element signature="method#delete#0;class#MySqlMarkDao#0" />
-                <element signature="e#3831#3832#0" expanded="true" />
-                <element signature="e#3894#3895#0" expanded="true" />
-                <element signature="method#prepareStatementForInsert#0;class#MySqlMarkDao#0" />
-                <element signature="method#prepareStatementForUpdate#0;class#MySqlMarkDao#0" />
-                <element signature="method#prepareStatementForDelete#0;class#MySqlMarkDao#0" />
-                <element signature="method#close#0;class#MySqlMarkDao#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlOrderDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="176" column="5" lean-forward="true" selection-start-line="176" selection-start-column="5" selection-end-line="176" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#MySqlOrderDao#0;class#MySqlOrderDao#0" />
-                <element signature="method#create#0;class#MySqlOrderDao#0" />
-                <element signature="method#getAll#0;class#MySqlOrderDao#0" />
-                <element signature="method#update#0;class#MySqlOrderDao#0" />
-                <element signature="method#delete#0;class#MySqlOrderDao#0" />
-                <element signature="method#getUpdateQuery#0;class#MySqlOrderDao#0" />
-                <element signature="method#getCreateQuery#0;class#MySqlOrderDao#0" />
-                <element signature="method#getSelectAll#0;class#MySqlOrderDao#0" />
-                <element signature="method#SelectIdQuery#0;class#MySqlOrderDao#0" />
-                <element signature="method#prepareStatementForInsert#0;class#MySqlOrderDao#0" />
-                <element signature="method#prepareStatementForUpdate#0;class#MySqlOrderDao#0" />
-                <element signature="method#prepareStatementForDelete#0;class#MySqlOrderDao#0" />
-                <element signature="method#close#0;class#MySqlOrderDao#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlProductDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#MySqlProductDao#0;class#MySqlProductDao#0" />
-                <element signature="method#create#0;class#MySqlProductDao#0" />
-                <element signature="method#getAll#0;class#MySqlProductDao#0" />
-                <element signature="method#update#0;class#MySqlProductDao#0" />
-                <element signature="method#delete#0;class#MySqlProductDao#0" />
-                <element signature="method#getCreateQuery#0;class#MySqlProductDao#0" />
-                <element signature="method#getDeleteQuery#0;class#MySqlProductDao#0" />
-                <element signature="method#prepareStatementForInsert#0;class#MySqlProductDao#0" />
-                <element signature="method#prepareStatementForUpdate#0;class#MySqlProductDao#0" />
-                <element signature="method#prepareStatementForDelete#0;class#MySqlProductDao#0" />
-                <element signature="method#close#0;class#MySqlProductDao#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/by/chester/dao/OrderDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlUserDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="166" lean-forward="true" selection-start-line="166" selection-end-line="166" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#MySqlUserDao#0;class#MySqlUserDao#0" />
-                <element signature="method#create#0;class#MySqlUserDao#0" />
-                <element signature="method#getAll#0;class#MySqlUserDao#0" />
-                <element signature="method#update#0;class#MySqlUserDao#0" />
-                <element signature="method#delete#0;class#MySqlUserDao#0" />
-                <element signature="method#prepareStatementForInsert#0;class#MySqlUserDao#0" />
-                <element signature="method#prepareStatementForUpdate#0;class#MySqlUserDao#0" />
-                <element signature="method#prepareStatementForDelete#0;class#MySqlUserDao#0" />
-                <element signature="method#close#0;class#MySqlUserDao#0" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -334,8 +190,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/chester/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/chester/lesson10/dao/PersistException.java" />
         <option value="$PROJECT_DIR$/src/chester/lesson10/mySqlDAO/MySqlDaoFactory.java" />
         <option value="$PROJECT_DIR$/src/chester/lesson10/mySqlDAO/MySqlStudentDao.java" />
         <option value="$PROJECT_DIR$/src/chester/lesson10/resources/config.properties" />
@@ -349,31 +203,18 @@
         <option value="$PROJECT_DIR$/src/by/chester/dao/GenericDao.java" />
         <option value="$PROJECT_DIR$/src/by/chester/mySqlDAO/StudentDao.java" />
         <option value="$PROJECT_DIR$/src/by/chester/mySqlDAO/LessonDao.java" />
-        <option value="$PROJECT_DIR$/src/by/chester/entities/Lesson.java" />
-        <option value="$PROJECT_DIR$/src/by/chester/entities/Mark.java" />
-        <option value="$PROJECT_DIR$/src/by/chester/entities/Student.java" />
         <option value="$PROJECT_DIR$/src/by/chester/mySqlDAO/MarkDao.java" />
-        <option value="$PROJECT_DIR$/src/by/chester/dao/MarkDao.java" />
-        <option value="$PROJECT_DIR$/src/by/chester/dao/StudentDao.java" />
-        <option value="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlDaoFactory.java" />
-        <option value="$PROJECT_DIR$/src/by/chester/dao/DaoFactory.java" />
-        <option value="$PROJECT_DIR$/src/by/chester/dao/LessonDao.java" />
-        <option value="$PROJECT_DIR$/src/by/chester/resources/config.properties" />
         <option value="$PROJECT_DIR$/src/by/chester/entities/Address.java" />
         <option value="$PROJECT_DIR$/src/by/chester/entities/Category.java" />
         <option value="$PROJECT_DIR$/src/by/chester/entities/Order.java" />
         <option value="$PROJECT_DIR$/src/by/chester/entities/Product.java" />
         <option value="$PROJECT_DIR$/src/by/chester/entities/User.java" />
-        <option value="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlLessonDao.java" />
         <option value="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqAddressDao.java" />
         <option value="$PROJECT_DIR$/src/by/chester/mySqlDAO/MysqlCategoryDao.java" />
-        <option value="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlStudentDao.java" />
         <option value="$PROJECT_DIR$/src/by/chester/entities/Customer.java" />
         <option value="$PROJECT_DIR$/src/by/chester/mySqlDAO/MysqlCustomerDao.java" />
         <option value="$PROJECT_DIR$/src/by/chester/mySqlDAO/MysqlOrderDao.java" />
-        <option value="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlMarkDao.java" />
         <option value="$PROJECT_DIR$/src/by/chester/mySqlDAO/MysqlProductDao.java" />
-        <option value="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlUserDao.java" />
         <option value="$PROJECT_DIR$/src/by/chester/dao/AddressDao.java" />
         <option value="$PROJECT_DIR$/src/by/chester/dao/CategoryDao.java" />
         <option value="$PROJECT_DIR$/src/by/chester/dao/CustomerDao.java" />
@@ -381,10 +222,25 @@
         <option value="$PROJECT_DIR$/src/by/chester/dao/ProductDao.java" />
         <option value="$PROJECT_DIR$/src/by/chester/dao/UserDao.java" />
         <option value="$PROJECT_DIR$/src/by/chester/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/by/chester/main/Main2.java" />
+        <option value="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlLessonDao.java" />
+        <option value="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlStudentDao.java" />
+        <option value="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlMarkDao.java" />
+        <option value="$PROJECT_DIR$/src/by/chester/dao/MarkDao.java" />
+        <option value="$PROJECT_DIR$/src/by/chester/dao/LessonDao.java" />
+        <option value="$PROJECT_DIR$/src/by/chester/dao/StudentDao.java" />
+        <option value="$PROJECT_DIR$/src/by/chester/entities/Lesson.java" />
+        <option value="$PROJECT_DIR$/src/by/chester/entities/Mark.java" />
+        <option value="$PROJECT_DIR$/src/by/chester/entities/Student.java" />
         <option value="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlAddressDao.java" />
-        <option value="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlOrderDao.java" />
         <option value="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlProductDao.java" />
+        <option value="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlUserDao.java" />
+        <option value="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlOrderDao.java" />
+        <option value="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlCustomerDao.java" />
+        <option value="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlCategoryDao.java" />
+        <option value="$PROJECT_DIR$/src/by/chester/dao/DaoFactory.java" />
+        <option value="$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlDaoFactory.java" />
+        <option value="$PROJECT_DIR$/src/by/chester/resources/config.properties" />
+        <option value="$PROJECT_DIR$/src/by/chester/main/Main2.java" />
       </list>
     </option>
   </component>
@@ -493,7 +349,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549983453001" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549987012753" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -644,7 +500,7 @@
       <workItem from="1549875057689" duration="32048000" />
       <workItem from="1549960520835" duration="683000" />
       <workItem from="1549963247950" duration="1221000" />
-      <workItem from="1549964658949" duration="16679000" />
+      <workItem from="1549964658949" duration="19706000" />
     </task>
     <task id="LOCAL-00001" summary="second commit">
       <created>1548449271027</created>
@@ -793,15 +649,21 @@
       <option name="project" value="LOCAL" />
       <updated>1549974319190</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="22 commit.&#10;12/02/19&#10;17/00&#10;All DAO + interfeices done.&#10;Checking...">
+      <created>1549983901646</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1549983901646</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202483000" />
+    <option name="totallyTimeSpent" value="205510000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16580977" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -812,7 +674,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32974428" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993573" visible="true" weight="0.12113055" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993573" visible="true" weight="0.41991925" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.41722745" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -828,7 +690,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info active="true" anchor="right" id="Database" order="5" visible="true" weight="0.13496144" />
+      <window_info active="true" anchor="right" id="Database" order="5" visible="true" weight="0.13946016" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
@@ -872,58 +734,17 @@
     <MESSAGE value="19 commit.&#10;12/02/19&#10;00/00&#10;interfaces call" />
     <MESSAGE value="20 commit.&#10;12/02/19&#10;11/00&#10;Final" />
     <MESSAGE value="21 commit.&#10;12/02/19&#10;15/00&#10;correction of Lesson&#10;new Entities&#10;new DAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="21 commit.&#10;12/02/19&#10;15/00&#10;correction of Lesson&#10;new Entities&#10;new DAO" />
+    <MESSAGE value="22 commit.&#10;12/02/19&#10;17/00&#10;All DAO + interfeices done.&#10;Checking..." />
+    <option name="LAST_COMMIT_MESSAGE" value="22 commit.&#10;12/02/19&#10;17/00&#10;All DAO + interfeices done.&#10;Checking..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlMarkDao.java</url>
-          <line>87</line>
-          <properties />
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlMarkDao.java</url>
-          <line>128</line>
-          <properties />
-          <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlMarkDao.java</url>
-          <line>79</line>
-          <properties />
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlStudentDao.java</url>
-          <line>132</line>
-          <properties />
-          <option name="timeStamp" value="93" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlMarkDao.java</url>
-          <line>108</line>
-          <properties />
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlLessonDao.java</url>
-          <line>77</line>
-          <properties />
-          <option name="timeStamp" value="122" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlDaoFactory.java</url>
           <line>15</line>
           <properties />
           <option name="timeStamp" value="123" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlCategoryDao.java</url>
-          <line>30</line>
-          <properties />
-          <option name="timeStamp" value="132" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlCustomerDao.java</url>
@@ -932,29 +753,15 @@
           <option name="timeStamp" value="143" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlMarkDao.java</url>
-          <line>101</line>
+          <url>file://$PROJECT_DIR$/src/by/chester/main/Main2.java</url>
+          <line>25</line>
           <properties />
-          <option name="timeStamp" value="147" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlLessonDao.java</url>
-          <line>93</line>
-          <properties />
-          <option name="timeStamp" value="148" />
+          <option name="timeStamp" value="153" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/../mysql-connector-java-5.1.6.jar!/com/mysql/jdbc/PreparedStatement.class" />
-    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.sql/java/sql/PreparedStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="61" column="17" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.sql/java/sql/Connection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="239">
@@ -989,20 +796,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/chester/resources/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../11/mysql-connector-java-5.1.6.jar!/com/mysql/jdbc/ConnectionImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="2405" selection-start-line="2405" selection-end-line="2405" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://8ebaad25-ec29-4c3d-b924-bece6ffe82fa/schema/students_db/table/student">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1024,37 +817,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlDaoFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="22" column="58" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#MySqlDaoFactory#0;class#MySqlDaoFactory#0" />
-            <element signature="method#getConnection#0;class#MySqlDaoFactory#0" />
-            <element signature="method#getMySqlLessonDao#0;class#MySqlDaoFactory#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../../11/mysql-connector-java-5.1.6.jar!/com/mysql/jdbc/PreparedStatement.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="2232" selection-start-line="2232" selection-end-line="2232" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/chester/entities/Mark.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://1fc60cbe-7b9e-48e2-90b9-ad71ab2e114d/schema/sushi_db/table/customer">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1072,118 +838,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/chester/entities/Lesson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#122#123#0" expanded="true" />
-            <element signature="e#147#148#0" expanded="true" />
-            <element signature="e#257#258#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://1fc60cbe-7b9e-48e2-90b9-ad71ab2e114d/schema/sushi_db/table/orders">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlCustomerDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="99" column="36" selection-start-line="99" selection-start-column="36" selection-end-line="99" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#MysqlCustomerDao#0;class#MysqlCustomerDao#0" />
-            <element signature="method#create#0;class#MysqlCustomerDao#0" />
-            <element signature="method#getAll#0;class#MysqlCustomerDao#0" />
-            <element signature="method#update#0;class#MysqlCustomerDao#0" />
-            <element signature="method#delete#0;class#MysqlCustomerDao#0" />
-            <element signature="method#getCreateQuery#0;class#MysqlCustomerDao#0" />
-            <element signature="method#getUpdateQuery#0;class#MysqlCustomerDao#0" />
-            <element signature="method#SelectIdQuery#0;class#MysqlCustomerDao#0" />
-            <element signature="method#prepareStatementForInsert#0;class#MysqlCustomerDao#0" />
-            <element signature="method#prepareStatementForUpdate#0;class#MysqlCustomerDao#0" />
-            <element signature="method#prepareStatementForDelete#0;class#MysqlCustomerDao#0" />
-            <element signature="method#close#0;class#MysqlCustomerDao#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://1fc60cbe-7b9e-48e2-90b9-ad71ab2e114d/schema/sushi_db/table/product">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlCategoryDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-170">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#MysqlCategoryDao#0;class#MysqlCategoryDao#0" />
-            <element signature="method#update#0;class#MysqlCategoryDao#0" />
-            <element signature="method#create#0;class#MysqlCategoryDao#0" />
-            <element signature="method#delete#0;class#MysqlCategoryDao#0" />
-            <element signature="method#getAll#0;class#MysqlCategoryDao#0" />
-            <element signature="method#prepareStatementForInsert#0;class#MysqlCategoryDao#0" />
-            <element signature="method#prepareStatementForUpdate#0;class#MysqlCategoryDao#0" />
-            <element signature="method#prepareStatementForDelete#0;class#MysqlCategoryDao#0" />
-            <element signature="method#close#0;class#MysqlCategoryDao#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/by/chester/entities/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/chester/entities/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/chester/dao/DaoFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/chester/dao/LessonDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/chester/dao/MarkDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/chester/dao/StudentDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="41" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="10" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1197,64 +855,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/chester/dao/CategoryDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="41" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="10" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/chester/dao/CustomerDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" selection-start-line="6" selection-end-line="10" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/chester/dao/ProductDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/chester/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/by/chester/main/Main3.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/chester/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="59" column="24" selection-end-line="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/chester/main/Main2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="8" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1265,162 +869,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlLessonDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="92" column="35" selection-start-line="92" selection-start-column="35" selection-end-line="92" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#MySqlLessonDao#0;class#MySqlLessonDao#0" />
-            <element signature="method#create#0;class#MySqlLessonDao#0" />
-            <element signature="method#getAll#0;class#MySqlLessonDao#0" />
-            <element signature="method#update#0;class#MySqlLessonDao#0" />
-            <element signature="method#delete#0;class#MySqlLessonDao#0" />
-            <element signature="method#getCreateQuery#0;class#MySqlLessonDao#0" />
-            <element signature="method#prepareStatementForInsert#0;class#MySqlLessonDao#0" />
-            <element signature="method#prepareStatementForUpdate#0;class#MySqlLessonDao#0" />
-            <element signature="method#prepareStatementForDelete#0;class#MySqlLessonDao#0" />
-            <element signature="method#close#0;class#MySqlLessonDao#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlStudentDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="102" column="41" selection-start-line="102" selection-start-column="41" selection-end-line="102" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#MySqlStudentDao#0;class#MySqlStudentDao#0" />
-            <element signature="method#create#0;class#MySqlStudentDao#0" />
-            <element signature="method#getAll#0;class#MySqlStudentDao#0" />
-            <element signature="method#update#0;class#MySqlStudentDao#0" />
-            <element signature="method#delete#0;class#MySqlStudentDao#0" />
-            <element signature="method#getCreateQuery#0;class#MySqlStudentDao#0" />
-            <element signature="method#SelectIdQuery#0;class#MySqlStudentDao#0" />
-            <element signature="method#prepareStatementForInsert#0;class#MySqlStudentDao#0" />
-            <element signature="method#prepareStatementForUpdate#0;class#MySqlStudentDao#0" />
-            <element signature="method#prepareStatementForDelete#0;class#MySqlStudentDao#0" />
-            <element signature="method#close#0;class#MySqlStudentDao#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlMarkDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="101" column="21" lean-forward="true" selection-start-line="101" selection-start-column="21" selection-end-line="101" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#MySqlMarkDao#0;class#MySqlMarkDao#0" />
-            <element signature="method#create#0;class#MySqlMarkDao#0" />
-            <element signature="method#getAll#0;class#MySqlMarkDao#0" />
-            <element signature="method#update#0;class#MySqlMarkDao#0" />
-            <element signature="method#delete#0;class#MySqlMarkDao#0" />
-            <element signature="e#3831#3832#0" expanded="true" />
-            <element signature="e#3894#3895#0" expanded="true" />
-            <element signature="method#prepareStatementForInsert#0;class#MySqlMarkDao#0" />
-            <element signature="method#prepareStatementForUpdate#0;class#MySqlMarkDao#0" />
-            <element signature="method#prepareStatementForDelete#0;class#MySqlMarkDao#0" />
-            <element signature="method#close#0;class#MySqlMarkDao#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/by/chester/entities/Address.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://1fc60cbe-7b9e-48e2-90b9-ad71ab2e114d/schema/sushi_db/table/category">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://1fc60cbe-7b9e-48e2-90b9-ad71ab2e114d/schema/sushi_db/table/address">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlAddressDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
-          <folding>
-            <element signature="method#MySqlAddressDao#0;class#MySqlAddressDao#0" />
-            <element signature="method#create#0;class#MySqlAddressDao#0" />
-            <element signature="method#getAll#0;class#MySqlAddressDao#0" />
-            <element signature="method#update#0;class#MySqlAddressDao#0" />
-            <element signature="method#delete#0;class#MySqlAddressDao#0" />
-            <element signature="method#getUpdateQuery#0;class#MySqlAddressDao#0" />
-            <element signature="method#getCreateQuery#0;class#MySqlAddressDao#0" />
-            <element signature="method#getSelectAll#0;class#MySqlAddressDao#0" />
-            <element signature="method#SelectIdQuery#0;class#MySqlAddressDao#0" />
-            <element signature="method#prepareStatementForInsert#0;class#MySqlAddressDao#0" />
-            <element signature="method#prepareStatementForUpdate#0;class#MySqlAddressDao#0" />
-            <element signature="method#prepareStatementForDelete#0;class#MySqlAddressDao#0" />
-            <element signature="method#close#0;class#MySqlAddressDao#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlOrderDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="176" column="5" lean-forward="true" selection-start-line="176" selection-start-column="5" selection-end-line="176" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#MySqlOrderDao#0;class#MySqlOrderDao#0" />
-            <element signature="method#create#0;class#MySqlOrderDao#0" />
-            <element signature="method#getAll#0;class#MySqlOrderDao#0" />
-            <element signature="method#update#0;class#MySqlOrderDao#0" />
-            <element signature="method#delete#0;class#MySqlOrderDao#0" />
-            <element signature="method#getUpdateQuery#0;class#MySqlOrderDao#0" />
-            <element signature="method#getCreateQuery#0;class#MySqlOrderDao#0" />
-            <element signature="method#getSelectAll#0;class#MySqlOrderDao#0" />
-            <element signature="method#SelectIdQuery#0;class#MySqlOrderDao#0" />
-            <element signature="method#prepareStatementForInsert#0;class#MySqlOrderDao#0" />
-            <element signature="method#prepareStatementForUpdate#0;class#MySqlOrderDao#0" />
-            <element signature="method#prepareStatementForDelete#0;class#MySqlOrderDao#0" />
-            <element signature="method#close#0;class#MySqlOrderDao#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlProductDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#MySqlProductDao#0;class#MySqlProductDao#0" />
-            <element signature="method#create#0;class#MySqlProductDao#0" />
-            <element signature="method#getAll#0;class#MySqlProductDao#0" />
-            <element signature="method#update#0;class#MySqlProductDao#0" />
-            <element signature="method#delete#0;class#MySqlProductDao#0" />
-            <element signature="method#getCreateQuery#0;class#MySqlProductDao#0" />
-            <element signature="method#getDeleteQuery#0;class#MySqlProductDao#0" />
-            <element signature="method#prepareStatementForInsert#0;class#MySqlProductDao#0" />
-            <element signature="method#prepareStatementForUpdate#0;class#MySqlProductDao#0" />
-            <element signature="method#prepareStatementForDelete#0;class#MySqlProductDao#0" />
-            <element signature="method#close#0;class#MySqlProductDao#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/chester/dao/OrderDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1448,12 +900,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/chester/dao/MarkDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" lean-forward="true" selection-end-line="12" />
+          <folding>
+            <element signature="e#0#385#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/chester/dao/LessonDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" lean-forward="true" selection-end-line="12" />
+          <folding>
+            <element signature="e#0#403#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/chester/dao/StudentDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="22" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/chester/entities/Lesson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="3" lean-forward="true" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/chester/entities/Mark.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="30" column="3" lean-forward="true" selection-end-line="31" />
+          <folding>
+            <element signature="e#0#729#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/chester/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="59" column="24" selection-end-line="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/chester/entities/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlUserDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="166" lean-forward="true" selection-start-line="166" selection-end-line="166" />
+        <state relative-caret-position="22">
+          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#MySqlUserDao#0;class#MySqlUserDao#0" />
             <element signature="method#create#0;class#MySqlUserDao#0" />
             <element signature="method#getAll#0;class#MySqlUserDao#0" />
@@ -1463,6 +972,280 @@
             <element signature="method#prepareStatementForUpdate#0;class#MySqlUserDao#0" />
             <element signature="method#prepareStatementForDelete#0;class#MySqlUserDao#0" />
             <element signature="method#close#0;class#MySqlUserDao#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlStudentDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlProductDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#MySqlProductDao#0;class#MySqlProductDao#0" />
+            <element signature="method#create#0;class#MySqlProductDao#0" />
+            <element signature="method#getAll#0;class#MySqlProductDao#0" />
+            <element signature="method#update#0;class#MySqlProductDao#0" />
+            <element signature="method#delete#0;class#MySqlProductDao#0" />
+            <element signature="method#getCreateQuery#0;class#MySqlProductDao#0" />
+            <element signature="method#getDeleteQuery#0;class#MySqlProductDao#0" />
+            <element signature="method#prepareStatementForInsert#0;class#MySqlProductDao#0" />
+            <element signature="method#prepareStatementForUpdate#0;class#MySqlProductDao#0" />
+            <element signature="method#prepareStatementForDelete#0;class#MySqlProductDao#0" />
+            <element signature="method#close#0;class#MySqlProductDao#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlOrderDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-91">
+          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+          <folding>
+            <element signature="method#MySqlOrderDao#0;class#MySqlOrderDao#0" />
+            <element signature="method#create#0;class#MySqlOrderDao#0" />
+            <element signature="method#getAll#0;class#MySqlOrderDao#0" />
+            <element signature="method#update#0;class#MySqlOrderDao#0" />
+            <element signature="method#delete#0;class#MySqlOrderDao#0" />
+            <element signature="method#getUpdateQuery#0;class#MySqlOrderDao#0" />
+            <element signature="method#getCreateQuery#0;class#MySqlOrderDao#0" />
+            <element signature="method#getSelectAll#0;class#MySqlOrderDao#0" />
+            <element signature="method#SelectIdQuery#0;class#MySqlOrderDao#0" />
+            <element signature="method#prepareStatementForInsert#0;class#MySqlOrderDao#0" />
+            <element signature="method#prepareStatementForUpdate#0;class#MySqlOrderDao#0" />
+            <element signature="method#prepareStatementForDelete#0;class#MySqlOrderDao#0" />
+            <element signature="method#close#0;class#MySqlOrderDao#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlMarkDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="98" column="32" selection-start-line="98" selection-start-column="32" selection-end-line="98" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlLessonDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="43" lean-forward="true" selection-end-line="162" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlCategoryDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="30" column="40" lean-forward="true" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
+          <folding>
+            <element signature="method#MySqlCategoryDao#0;class#MySqlCategoryDao#0" />
+            <element signature="method#update#0;class#MySqlCategoryDao#0" />
+            <element signature="method#create#0;class#MySqlCategoryDao#0" />
+            <element signature="method#delete#0;class#MySqlCategoryDao#0" />
+            <element signature="method#getAll#0;class#MySqlCategoryDao#0" />
+            <element signature="method#prepareStatementForInsert#0;class#MySqlCategoryDao#0" />
+            <element signature="method#prepareStatementForUpdate#0;class#MySqlCategoryDao#0" />
+            <element signature="method#prepareStatementForDelete#0;class#MySqlCategoryDao#0" />
+            <element signature="method#close#0;class#MySqlCategoryDao#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlAddressDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="13" column="41" lean-forward="true" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+          <folding>
+            <element signature="method#MySqlAddressDao#0;class#MySqlAddressDao#0" />
+            <element signature="method#create#0;class#MySqlAddressDao#0" />
+            <element signature="method#getAll#0;class#MySqlAddressDao#0" />
+            <element signature="method#update#0;class#MySqlAddressDao#0" />
+            <element signature="method#delete#0;class#MySqlAddressDao#0" />
+            <element signature="method#getUpdateQuery#0;class#MySqlAddressDao#0" />
+            <element signature="method#getCreateQuery#0;class#MySqlAddressDao#0" />
+            <element signature="method#getSelectAll#0;class#MySqlAddressDao#0" />
+            <element signature="method#SelectIdQuery#0;class#MySqlAddressDao#0" />
+            <element signature="method#prepareStatementForInsert#0;class#MySqlAddressDao#0" />
+            <element signature="method#prepareStatementForUpdate#0;class#MySqlAddressDao#0" />
+            <element signature="method#prepareStatementForDelete#0;class#MySqlAddressDao#0" />
+            <element signature="method#close#0;class#MySqlAddressDao#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/chester/dao/CategoryDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/chester/dao/CustomerDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/chester/dao/OrderDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/chester/dao/ProductDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/chester/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/chester/dao/DaoFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="51" lean-forward="true" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlDaoFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#MySqlDaoFactory#0;class#MySqlDaoFactory#0" />
+            <element signature="method#getConnection#0;class#MySqlDaoFactory#0" />
+            <element signature="method#getMySqlAddressDao#0;class#MySqlDaoFactory#0" />
+            <element signature="method#getMySqlCategoryDao#0;class#MySqlDaoFactory#0" />
+            <element signature="method#getMySqlCustomerDao#0;class#MySqlDaoFactory#0" />
+            <element signature="method#getMySqlOrderDao#0;class#MySqlDaoFactory#0" />
+            <element signature="method#getMySqlProductDao#0;class#MySqlDaoFactory#0" />
+            <element signature="method#getMySqlUserDao#0;class#MySqlDaoFactory#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../11/mysql-connector-java-5.1.6.jar!/com/mysql/jdbc/MysqlIO.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="1211" selection-start-line="1211" selection-end-line="1211" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/chester/resources/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="46" lean-forward="true" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../11/mysql-connector-java-5.1.6.jar!/com/mysql/jdbc/ConnectionImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="2405" selection-start-line="2405" selection-end-line="2405" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/chester/mySqlDAO/MySqlCustomerDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
+          <folding>
+            <element signature="method#MySqlCustomerDao#0;class#MySqlCustomerDao#0" />
+            <element signature="method#create#0;class#MySqlCustomerDao#0" />
+            <element signature="method#update#0;class#MySqlCustomerDao#0" />
+            <element signature="method#delete#0;class#MySqlCustomerDao#0" />
+            <element signature="method#getCreateQuery#0;class#MySqlCustomerDao#0" />
+            <element signature="e#3777#3778#0" expanded="true" />
+            <element signature="e#3874#3875#0" expanded="true" />
+            <element signature="method#getUpdateQuery#0;class#MySqlCustomerDao#0" />
+            <element signature="method#SelectIdQuery#0;class#MySqlCustomerDao#0" />
+            <element signature="method#prepareStatementForInsert#0;class#MySqlCustomerDao#0" />
+            <element signature="method#prepareStatementForUpdate#0;class#MySqlCustomerDao#0" />
+            <element signature="method#prepareStatementForDelete#0;class#MySqlCustomerDao#0" />
+            <element signature="method#close#0;class#MySqlCustomerDao#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://1fc60cbe-7b9e-48e2-90b9-ad71ab2e114d/schema/sushi_db/table/customer">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://1fc60cbe-7b9e-48e2-90b9-ad71ab2e114d/schema/sushi_db/table/product">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://1fc60cbe-7b9e-48e2-90b9-ad71ab2e114d/schema/sushi_db/table/orders">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://1fc60cbe-7b9e-48e2-90b9-ad71ab2e114d/schema/sushi_db/table/address">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://1fc60cbe-7b9e-48e2-90b9-ad71ab2e114d/schema/sushi_db/table/category">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://1fc60cbe-7b9e-48e2-90b9-ad71ab2e114d/schema/sushi_db/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/chester/main/Main2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

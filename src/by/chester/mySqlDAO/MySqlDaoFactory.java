@@ -50,17 +50,35 @@ public class MySqlDaoFactory implements DaoFactory {
         return connection;
     }
 
+    @Override
+    public AddressDao getMySqlAddressDao() throws PersistException {
+        return new MySqlAddressDao(connection);
+    }
 
     @Override
-    public MarkDao getMySqlMarkDao() throws PersistException {
-        return new MySqlMarkDao(connection);
+    public CategoryDao getMySqlCategoryDao() throws PersistException {
+        return new MySqlCategoryDao(connection);
     }
+
     @Override
-    public StudentDao getMySqlStudentDao() throws PersistException {
-        return new MySqlStudentDao(connection);
+    public CustomerDao getMySqlCustomerDao() throws PersistException {
+        return new MySqlCustomerDao(connection);
     }
+
     @Override
-    public LessonDao getMySqlLessonDao()throws PersistException {
-        return new MySqlLessonDao(connection);
+    public OrderDao getMySqlOrderDao() throws PersistException {
+        return new MySqlOrderDao(connection);
     }
+
+    @Override
+    public ProductDao getMySqlProductDao() throws PersistException {
+        return new MySqlProductDao(connection);
+    }
+
+    @Override
+    public UserDao getMySqlUserDao() throws PersistException {
+        return new MySqlUserDao(connection);
+
+    }
+
 }

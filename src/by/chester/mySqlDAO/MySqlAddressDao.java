@@ -1,4 +1,5 @@
 package by.chester.mySqlDAO;
+import by.chester.dao.AddressDao;
 import by.chester.dao.PersistException;
 import by.chester.entities.Address;
 import java.sql.Connection;
@@ -8,7 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySqlAddressDao {
+public class MySqlAddressDao implements AddressDao {
 
     private static Connection connection;
     private PreparedStatement statementCreate;

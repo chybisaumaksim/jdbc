@@ -1,8 +1,7 @@
 package by.chester.mySqlDAO;
+import by.chester.dao.OrderDao;
 import by.chester.dao.PersistException;
-import by.chester.entities.Lesson;
 import by.chester.entities.Order;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,7 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySqlOrderDao {
+public class MySqlOrderDao implements OrderDao {
 
     private static Connection connection;
     private PreparedStatement statementCreate;

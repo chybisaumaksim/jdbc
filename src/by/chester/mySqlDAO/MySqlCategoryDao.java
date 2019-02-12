@@ -1,4 +1,5 @@
 package by.chester.mySqlDAO;
+import by.chester.dao.CategoryDao;
 import by.chester.dao.PersistException;
 import by.chester.entities.Category;
 import java.sql.Connection;
@@ -8,7 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySqlCategoryDao {
+public class MySqlCategoryDao implements CategoryDao {
 
     private Connection connection;
     private PreparedStatement statementCreate;
@@ -16,7 +17,7 @@ public class MySqlCategoryDao {
     private PreparedStatement statementDelete;
     private PreparedStatement statementSelectID;
 
-    protected MySqlCategoryDao(Connection connection) throws PersistException {
+    protected MySqlCategoryDao (Connection connection) throws PersistException {
         try {
             this.connection = connection;
             statementCreate = connection.prepareStatement(getCreateQuery());

@@ -2,11 +2,17 @@ package by.chester.dao;
 
 public interface DaoFactory {
 
-    MarkDao getMySqlMarkDao() throws PersistException;
+    AddressDao getMySqlAddressDao() throws PersistException;
 
-    StudentDao getMySqlStudentDao() throws PersistException;
+    CategoryDao getMySqlCategoryDao() throws PersistException;
 
-    LessonDao getMySqlLessonDao() throws PersistException;
+    CustomerDao getMySqlCustomerDao() throws PersistException;
+
+    OrderDao getMySqlOrderDao() throws PersistException;
+
+    ProductDao getMySqlProductDao() throws PersistException;
+
+    UserDao getMySqlUserDao() throws PersistException;
 }
 
 
