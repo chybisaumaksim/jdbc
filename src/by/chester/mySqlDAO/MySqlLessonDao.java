@@ -113,8 +113,8 @@ public class MySqlLessonDao implements LessonDao {
     }
     private void prepareStatementForUpdate(PreparedStatement statement, Lesson object) throws PersistException {
         try {
-            statement.setInt(1, object.getId());
-            statement.setString(2, object.getLesson());
+            statement.setInt(2, object.getId());
+            statement.setString(1, object.getLesson());
         } catch (SQLException e) {
             throw new PersistException("Ошибка получения prepareStatementForUpdate", e);
         }

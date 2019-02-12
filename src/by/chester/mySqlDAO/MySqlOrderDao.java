@@ -1,7 +1,8 @@
 package by.chester.mySqlDAO;
 import by.chester.dao.PersistException;
-import by.chester.dao.StudentDao;
-import by.chester.entities.Student;
+import by.chester.entities.Lesson;
+import by.chester.entities.Order;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,15 +10,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySqlStudentDao implements StudentDao {
+public class MySqlOrderDao {
 
-    private Connection connection;
+    private static Connection connection;
     private PreparedStatement statementCreate;
     private PreparedStatement statementUpdate;
     private PreparedStatement statementDelete;
     private PreparedStatement statementSelectID;
 
-    protected MySqlStudentDao(Connection connection) throws PersistException {
+    protected MySqlOrderDao (Connection connection) throws PersistException {
         try {
             this.connection = connection;
             statementCreate = connection.prepareStatement(getCreateQuery());
@@ -25,13 +26,13 @@ public class MySqlStudentDao implements StudentDao {
             statementDelete = connection.prepareStatement(getDeleteQuery());
             statementSelectID = connection.prepareStatement(SelectIdQuery());
         } catch (SQLException e) {
-            throw new PersistException("Ошибка при создании prepareStatement в классе " + getClass(), e);
+            throw new PersistException("Ошибка при создании prepareStatement в классе "+getClass(), e);
         }
     }
-    public void create(Student student) throws PersistException {
+    public void create(Order order) throws PersistException {
         ResultSet generatedId = null;
         try {
-            prepareStatementForInsert(statementCreate, student);
+            prepareStatementForInsert(statementCreate, order);
             statementCreate.executeUpdate();
             generatedId = statementCreate.getGeneratedKeys();
             if (generatedId.next()) {
@@ -39,33 +40,35 @@ public class MySqlStudentDao implements StudentDao {
                 statementSelectID.setInt(1, id);
             }
         } catch (Exception e) {
-            throw new PersistException("Невозможно записать данные в БД", e);
+            throw new PersistException(" Невозможно записать данные в БД ", e);
         }finally {
             try {
                 if (generatedId != null) {
                     generatedId.close();
                 }
             } catch (SQLException e) {
-                throw new PersistException("Ошибка закрытия потока ", e);
+                throw new PersistException("Ошибка закрытия потока", e);
             }
         }
     }
-    public List<Student> getAll() throws PersistException {
-        ArrayList list= new ArrayList();
+    public List<Order> getAll() throws PersistException {
         ResultSet rs=null;
-        try (PreparedStatement stm = connection.prepareStatement(getSelectAll())){
+        List list = new ArrayList<>();
+        try (PreparedStatement stm = connection.prepareStatement(getSelectAll())) {
             rs = stm.executeQuery();
             while (rs.next()) {
-                Student st = new Student();
-                st.setId(rs.getInt(1));
-                st.setName(rs.getString(2));
-                st.setSurname(rs.getString(3));
-                st.setBirthDate(rs.getString(4));
-                st.setEnterYear(rs.getInt(5));
-                list.add(st);
+                Order order = new Order();
+                order.setId(rs.getInt(1));
+                order.setProductId(rs.getInt(2));
+                order.setAddressId(rs.getInt(3));
+                order.setNumber(rs.getInt(4));
+                order.setDelivery(rs.getString(5));
+                order.setOrderTime(rs.getString(6));
+                order.setOrderStatus(rs.getString(7));
+                list.add(order);
             }
         } catch (SQLException e) {
-            throw new PersistException("Ошибка закрытия потока ", e);
+            throw new PersistException("Ошибка Sql запроса", e);
         }finally {
             try {
                 if (rs != null) {
@@ -77,59 +80,63 @@ public class MySqlStudentDao implements StudentDao {
         }
         return list;
     }
-    public void update(Student student) throws PersistException {
+    public void update (Order order) throws PersistException {
         try {
-            prepareStatementForUpdate(statementUpdate, student);
+            prepareStatementForUpdate(statementUpdate, order);
             statementUpdate.executeUpdate();
         } catch (SQLException e) {
             throw new PersistException("Ошибка Sql запроса", e);
         }
     }
-    public void delete(Student student) throws PersistException {
+    public void delete (Order order) throws PersistException {
         try {
-            prepareStatementForDelete(statementDelete, student);
+            prepareStatementForDelete(statementDelete, order);
             statementDelete.executeUpdate();
-        } catch (SQLException e) {
-            throw new PersistException("Ошибка закрытия потока ", e);
+        } catch (Exception e) {
+            throw new PersistException("Ошибка Sql запроса", e);
         }
     }
-    private String getCreateQuery() {
-        return "INSERT INTO student (First_Name, Second_Name, Birth_Date, Enter_Year) \n  VALUES (?, ?, ?, ?);";
-    }
-    private String getSelectAll() {
-        return "SELECT ID, First_Name, Second_Name, Birth_Date, Enter_Year FROM STUDENT ";
-    }
     private String getUpdateQuery() {
-        return "UPDATE Student SET First_Name = ?, Second_Name  = ?, Birth_Date = ?, Enter_Year = ? WHERE id = ?;";
+        return "UPDATE Orders SET  Number = ?, Delivery = ?, Order_time = ?, Order_status = ? WHERE ID = ? ";
+    }
+    private String getCreateQuery() {
+        return "INSERT INTO Orders (Product_ID, Address_ID, Number, Delivery, Order_time, " +
+                " Order_status) VALUES (?, ?, ?, ?, ?, ?); ";
     }
     private String getDeleteQuery() {
-        return "DELETE FROM STUDENT WHERE id= ?;";
+        return "DELETE FROM Orders WHERE ID = ?; ";
+    }
+    private String getSelectAll() {
+        return "SELECT ID, Product_ID, Address_ID, Number, Delivery, Order_time, Order_status FROM Orders ; ";
     }
     private String SelectIdQuery() {
-        return "SELECT ID, First_Name, Second_Name, Birth_Date, Enter_Year FROM STUDENT WHERE ID = ? ; ";
+        return "SELECT ID, Product_ID, Address_ID, Number, Delivery, Order_time, Order_status " +
+                "FROM Orders WHERE ID = ? ;";
     }
-    private void prepareStatementForInsert(PreparedStatement statement, Student object) throws PersistException {
+    private void prepareStatementForInsert(PreparedStatement statement, Order object) throws PersistException {
         try {
-            statement.setString(1, object.getName());
-            statement.setString(2, object.getSurname());
-            statement.setString(3, object.getBirthDate());
-            statement.setInt(4, object.getEnterYear());
+            statement.setInt(1, object.getProductId());
+            statement.setInt(2, object.getAddressId());
+            statement.setInt(3, object.getNumber());
+            statement.setString(4, object.getDelivery());
+            statement.setString(5, object.getOrderTime());
+            statement.setString(6, object.getOrderStatus());
         } catch (SQLException e) {
             throw new PersistException("Ошибка получения prepareStatementForInsert", e);
         }
     }
-    private void prepareStatementForUpdate(PreparedStatement statement, Student object) throws PersistException {
+    private void prepareStatementForUpdate(PreparedStatement statement, Order object) throws PersistException {
         try {
-            statement.setString(1, object.getName());
-            statement.setString(2, object.getSurname());
-            statement.setString(3, object.getBirthDate());
-            statement.setInt(4, object.getEnterYear());
+            statement.setInt(1, object.getNumber());
+            statement.setString(2, object.getDelivery());
+            statement.setString(3, object.getOrderTime());
+            statement.setString(4, object.getOrderStatus());
             statement.setInt(5, object.getId());
         } catch (SQLException e) {
             throw new PersistException("Ошибка получения prepareStatementForUpdate", e);
         }
     }
-    private void prepareStatementForDelete(PreparedStatement statement, Student object) throws PersistException {
+    private void prepareStatementForDelete(PreparedStatement statement, Order object) throws PersistException {
         try {
             statement.setInt(1, object.getId());
         } catch (SQLException e) {
@@ -159,14 +166,13 @@ public class MySqlStudentDao implements StudentDao {
             if(statementSelectID != null)
                 statementSelectID.close();
         } catch (SQLException e) {
-            throw new PersistException("Ошибка закрытия statementSelectID ", e);
+            throw new PersistException(" Ошибка закрытия statementSelectID ", e);
         }
         try {
-            if(connection == null)
+            if(connection != null)
                 connection.close();
         } catch (SQLException e) {
-            throw new PersistException("Ошибка закрытия Connection", e);
+            throw new PersistException("Ошибка закрытия Connection ", e);
         }
     }
 }
-

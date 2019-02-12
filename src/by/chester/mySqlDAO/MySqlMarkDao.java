@@ -17,7 +17,7 @@ public class MySqlMarkDao implements MarkDao {
     private PreparedStatement statementDelete;
     private PreparedStatement statementSelectID;
 
-    protected MySqlMarkDao(Connection connection) throws PersistException {
+    protected MySqlMarkDao (Connection connection) throws PersistException {
         try {
             this.connection = connection;
             statementCreate = connection.prepareStatement(getCreateQuery());
@@ -103,7 +103,7 @@ public class MySqlMarkDao implements MarkDao {
     }
     private String getDeleteQuery() {return "DELETE FROM Mark WHERE id= ?;"; }
     private String SelectIdQuery() {
-            return "SELECT id, student_Id, lesson_Id, mark FROM mark WHERE ID = ? ; ";
+            return "SELECT id, student_Id, lesson_Id, mark WHERE ID = ? ; ";
         }
     private void prepareStatementForInsert(PreparedStatement statement, Mark object) throws PersistException {
         try {
@@ -116,8 +116,9 @@ public class MySqlMarkDao implements MarkDao {
     }
     private void prepareStatementForUpdate(PreparedStatement statement, Mark object) throws PersistException {
         try {
-            statement.setInt(1, object.getMark());
             statement.setInt(2, object.getId());
+            statement.setInt(1, object.getMark());
+
 
         } catch (Exception e) {
             throw new PersistException("Ошибка получения prepareStatementForUpdate", e);

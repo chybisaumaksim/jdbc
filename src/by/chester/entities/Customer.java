@@ -3,8 +3,8 @@ package by.chester.entities;
 public class Customer {
 
     private int id;
-    private String customerName;
-    private String customerSurname;
+    private String name;
+    private String surname;
     private int phoneNumber;
 
     public int getId() {
@@ -13,17 +13,17 @@ public class Customer {
     public void setId(int id) {
         this.id = id;
     }
-    public String getCustomerName() {
-        return customerName;
+    public String getName() {
+        return name;
     }
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+    public void setName(String name) {
+        this.name = name;
     }
-    public String getCustomerSurname() {
-        return customerSurname;
+    public String getSurname() {
+        return surname;
     }
-    public void setCustomerSurname(String customerSurname) {
-        this.customerSurname = customerSurname;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
     public int getPhoneNumber() {
         return phoneNumber;
