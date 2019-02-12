@@ -96,10 +96,10 @@ public class MySqlCustomerDao implements CustomerDao {
         return "INSERT INTO Customer (Customer_name, Customer_surname, Phone_number) VALUES (?, ?, ?); ";
     }
     private String getSelectAll() {
-        return "SELECT ID, Customer_name, Customer_surname, Phone_number FROM Customer ;";
+        return "SELECT ID, Customer_name, Customer_surname, Phone_number FROM Customer ";
     }
     private String getUpdateQuery() {
-        return "UPDATE Student SET Customer_name = ?, Customer_surname  = ?, Phone_number = ? WHERE id = ?; ";
+        return "UPDATE Customer SET Customer_name = ?, Customer_surname  = ?, Phone_number = ? WHERE id = ? ";
     }
     private String getDeleteQuery() {
         return "DELETE FROM Customer WHERE id= ?; ";

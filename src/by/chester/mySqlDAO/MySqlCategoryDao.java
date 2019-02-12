@@ -91,7 +91,7 @@ public class MySqlCategoryDao implements CategoryDao {
         return list;
     }
     private String getCreateQuery() {
-        return "INSERT INTO Category Category_name VALUES ?; ";
+        return "INSERT INTO Category (Category_name) VALUES (?) ";
     }
     private String getSelectAll() {
         return "SELECT ID, Category_name FROM Category ;";

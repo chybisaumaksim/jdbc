@@ -165,5 +165,4 @@ public class MySqlUserDao implements UserDao {
             throw new PersistException("Ошибка закрытия Connection", e);
         }
     }
-
 }
